@@ -1,0 +1,51 @@
+import Button from './Button'
+
+export default function Hero(){
+    return(
+        <div className='w-full flex gap-16 p-4 md:px-20 md:py-24'>
+
+          <div className=' flex flex-col gap-8  items-start'>
+
+           <img src="badge.png" alt="hero badge"/>
+
+           <h1 className='font-geist font-extrabold text-[54px] text-[#F8FAFC]  leading-[64px]'>
+            Master Programming 
+            Through Practice,
+             Not Theory
+            </h1>
+
+           <p className='font-geist font-normal text-[18px] text-[#94A3B8]  leading-[28px]'>
+            CodeClass pairs real-time expert lectures with live, hands-on CodePen assignments.
+             Get reviewed and certified
+             by senior FAANG engineers in a highly structured classroom environment.
+             </p>
+
+             <div className='flex gap-4 '>
+         
+            
+                 <Button
+                 text='Explore Courses'
+                  className='bg-[#2979FF] text-[#F8FAFC] px-6 py-3 rounded-[6px] cursor-pointer hover:bg-[#1D64D8]'
+                 />
+                  
+                <img
+                 src='btn-secondary.png'
+                 className='cursor-pointer'
+                 alt='playDemo'
+                />
+                
+              
+            
+             </div>
+
+
+         </div>
+
+         <img
+          src="hero-visual.png" 
+          alt="hero-visual" 
+          className='hidden  md:block w-[560px] h-[444px]'/>
+
+        </div>
+    )
+}
