@@ -1,7 +1,8 @@
-import Button from './Button'
+import Button from '../Utilities/Button'
+import UnorderedList from '../Utilities/UnorderedList'
 import { Menu,X } from "lucide-react";
 import {useState} from 'react'
-import UnorderedList from './UnorderedList'
+
 
 export default function NavBar(){
 
