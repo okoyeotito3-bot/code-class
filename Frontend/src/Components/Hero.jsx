@@ -1,4 +1,6 @@
 import Button from '../Utilities/Button'
+import { Play } from 'lucide-react';
+
 
 export default function Hero(){
     return(
@@ -8,7 +10,7 @@ export default function Hero(){
 
            <img src="badge.png" alt="hero badge"/>
 
-           <h1 className='font-geist font-extrabold text-[54px] text-[#F8FAFC]  leading-[64px]'>
+           <h1 className='font-geist font-extrabold  text-[#F8FAFC] text-2xl  md:text-5xl lg:text-5xl'>
             Master Programming 
             Through Practice,
              Not Theory
@@ -25,14 +27,16 @@ export default function Hero(){
             
                  <Button
                  text='Explore Courses'
-                  className='bg-[#2979FF] text-[#F8FAFC] px-6 py-3 rounded-[6px] cursor-pointer hover:bg-[#1D64D8]'
+                  className='bg-[#2979FF] text-[#F8FAFC] px-6 py-3 rounded-[6px] cursor-pointer hover:bg-[#1D64D8] whitespace-nowrap'
                  />
                   
-                <img
-                 src='btn-secondary.png'
-                 className='cursor-pointer'
-                 alt='playDemo'
-                />
+                  <Button
+                  icon = {<Play/> }
+                  text= "Watch Demo"
+                  className="flex items-center gap-2 py-3 px-3 rounded-[6px] bg-[#161B26] text-[#94A3B8] text-semibold font-geist text-xl"
+                  />
+
+                  
                 
               
             
