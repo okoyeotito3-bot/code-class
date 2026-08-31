@@ -22,7 +22,7 @@ export default function Hero(){
              by senior FAANG engineers in a highly structured classroom environment.
              </p>
 
-             <div className='flex gap-4 '>
+             <div className='flex gap-1 md:gap-4 lg:gap-4 '>
          
             
                  <Button
