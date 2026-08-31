@@ -1,13 +1,13 @@
 export default function Benefits(){
 
     return(
-        <div className="w-full flex flex-col gap-16 p-2 md:py-20 md:px-30">
+        <section className="w-full flex flex-col gap-16 p-4 md:py-20 md:px-30">
             <header className=" flex flex-col items-center gap-4">
                 <img 
                   src="benefit-badge.png"
                   alt="benefit-badge"
                 />
-                <h1 className="font-geist font-extrabold text-9 text-[#F8FAFC] ">
+                <h1 className="font-geist font-extrabold text-xl text-[#F8FAFC] ">
                     Designed for Practical Competence
                 </h1>
                 <p className="font-geist font-normal text-4 text-[#94A3B8] text-center"> 
@@ -22,6 +22,6 @@ export default function Benefits(){
                 <img src="benefit-card (3).png" alt="benefit-card" />
             </main>
 
-        </div>
+        </section>
     )
 }

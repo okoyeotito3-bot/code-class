@@ -33,7 +33,7 @@ export default function Hero(){
                   <Button
                   icon = {<Play/> }
                   text= "Watch Demo"
-                  className="flex items-center gap-2 py-3 px-3 rounded-[6px] bg-[#161B26] text-[#94A3B8]  font-geist text-xl whitespace-nowrap"
+                  className="flex items-center gap-2 py-3 px-3 rounded-[6px] bg-[#161B26] text-[#94A3B8]  font-geist text-xl whitespace-nowrap cursor-pointer hover:bg-[#161B15]"
                   />
 
                   

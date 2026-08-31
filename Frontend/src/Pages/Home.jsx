@@ -5,6 +5,10 @@ import Benefits from '../Components/Benefits'
 import HowItWork from '../Components/HowItWork'
 import FeatureCourse from '../Components/FeaturedCourse'
 import InstructorSpotlight from '../Components/InstructorSpotlight'
+import WorkShowCase from '../Components/WorkFlowShowcase'
+import Faq from '../Components/FAQ'
+import FinalCta from '../Components/Final-Cta'
+import Footer from '../Components/Footer'
 
 export default function Home(){
     return(
@@ -17,6 +21,10 @@ export default function Home(){
          <HowItWork/>
          <FeatureCourse/>
          <InstructorSpotlight/>
+         <WorkShowCase/>
+         <Faq/>
+         <FinalCta/>
+         <Footer/>
        </div>
         
         
