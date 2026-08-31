@@ -1,5 +1,6 @@
 import UnorderedList from "../Utilities/UnorderedList"
-import { Github, Linkedin } from 'lucide-react';
+
+
 
 
 export default function Footer(){
@@ -53,18 +54,11 @@ export default function Footer(){
              
             </header>
 
-            <div> 
+            
               <h6 className="text-[#64748B] font-geist text-sm">© 2026 CodeClass, Inc. All rights reserved.</h6>
 
-              <div className="flex gap-4">
-                <a href="#" className="hover:text-white transition-colors">
-                   <Github size={20} />
-                 </a>
-                 <a href="#" className="hover:text-white transition-colors">
-                   <Linkedin size={20} />
-                 </a>
-              </div>
-         </div>
+            
+         
         </section>
     )
 }
