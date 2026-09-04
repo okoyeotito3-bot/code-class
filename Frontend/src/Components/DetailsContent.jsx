@@ -14,9 +14,7 @@ const [error, setError] = useState(null);
       if (error) {
         throw error;
       }
-
       setModules(data);
-     
     
     } catch (err) {
       setError(err.message);
