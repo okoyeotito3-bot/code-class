@@ -2,7 +2,7 @@ import { ChevronDown, Minus } from 'lucide-react';
 
 export default function Faq(){
     return(
-        <section className="flex flex-col w-full bg-[#161B26] p-4 gap-4 md:gap-16 lg:gap-16 md:py-[80px] md:px[120px] lg:py-[80px] lg:px[120px]">
+        <section className="flex flex-col w-full bg-[#161B26] p-4 gap-4 md:gap-16 lg:gap-16 md:py-20 md:px[120px] lg:py-20 lg:px[120px]">
             <header className=" flex flex-col gap-4 items-center">
                 <p className="font-[geist-mono] font-semibold text-sm text-[#FFD600]">HAVE QUESTIONS?</p>
                 <p className="font-geist font-extrabold text-lg text-[#F8FAFC]">Frequently Asked Questions</p>

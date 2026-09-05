@@ -41,7 +41,7 @@ export default function DetailsContent() {
   });
 
   return (
-    <section className="w-full px-20 pt-16 pb-30 gap-8 flex flex-col md:flex-row lg:flex-row">
+    <section className="w-full p-4 gap-8 flex flex-col md:flex-row lg:flex-row md:px-20 md:pt-16 md:pb-30 lg:px-20 lg:pt-16 lg:pb-30">
       <div className="flex flex-col gap-12">
         <div className="flex flex-col gap-4">
           <span className="text-[#2979FF] font-bold font-[Geist-Mono] text-sm">
