@@ -1,6 +1,6 @@
 export default function DetailsHero() {
   return (
-    <section className="w-full flex flex-col gap-6 px-20 py-16">
+    <section className="w-full flex flex-col gap-6 p-4 md:px-20 md:py-16 lg:px-20 lg:py-16">
       <div className="flex gap-2 items-center">
         <span className="text-[#64748B] font-[Geist-Mono] text-sm">COURSES</span>
         <span className="text-[#64748B] font-[Geist-Mono] text-sm">/</span>
