@@ -4,6 +4,7 @@ import CoursePage from "./Pages/CoursePage";
 import CourseDetails from "./Pages/CourseDetails";
 import RegsiterPage from "./Pages/RegisterPage";
 import LoginPage from "./Pages/LoginPage";
+import ForgottenPassword from "./Pages/ForgottenPassword";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/Login" element={<LoginPage/>} />
         <Route path="/Courses" element={<CoursePage />} />
         <Route path="/javascript" element={<CourseDetails />} />
+        <Route path="/Forgot-Password" element={<ForgottenPassword />} />
       </Routes>
     </>
   );
