@@ -4,30 +4,58 @@ import SocialDivider from "../Utilities/SocialDivider";
 import Button from "../Utilities/Button";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useSearchParams } from "react-router-dom";
+import { CircleX } from "lucide-react";
+import { useState } from "react";
+import {supabase} from '../supabase'
+
 
 export default function AuthCard() {
   const [SearchParam] = useSearchParams();
   const email = SearchParam.get("email");
+  const [passwordError, setPasswordError] = useState(false);
+
+  async function handleSignUp(formData) {
+    const fullName = formData.get("fullName");
+    const emailAddress = formData.get("emailAddress");
+    const password = formData.get("password");
+    const confirmPassword = formData.get("confirmPassword");
+
+    if (password !== confirmPassword) {
+      setPasswordError(true);
+      return;
+    }
+    setPasswordError(false);
+
+    const {data,error} = await supabase.auth.signUp({
+      Name:fullName,
+      email:emailAddress,
+      password:password
+    })
+  }
+
   return (
-    <section className=" m-auto
+    <section
+      className=" m-auto
   flex flex-col 
   gap-8
   p-6 md:p-12
   rounded-sm
   bg-[#161B26]
   w-[calc(100%-2rem)]
-  max-w-120">
+  max-w-120"
+    >
       <AuthHeader
         AuthHeaderText="Create Your Account"
         AuthHeaderSubText="Join live programming classes in seconds"
       />
-      <form className="flex flex-col gap-4 w-full">
+      <form action={handleSignUp} className="flex flex-col gap-4 w-full">
         <label className="flex flex-col gap-2">
           <span className="text-[#94A3B8] font-[Geist-Mono] font-semibold text-sm">
             Full Name
           </span>
           <Input
             type="text"
+            name="fullName"
             className="px-4 py-3 rounded-md bg-[#0B0F19] flex items-center text-[#64748B] font-geist text-sm "
             placeholder="e.g. John Doe"
           />
@@ -38,7 +66,8 @@ export default function AuthCard() {
           </span>
           <Input
             type="email"
-           defaultValue= {email }
+            name="emailAddress"
+            defaultValue={email}
             className="px-4 py-3 rounded-md bg-[#0B0F19] flex items-center text-[#64748B] font-geist text-sm"
             placeholder="name@domain.com"
           />
@@ -49,6 +78,7 @@ export default function AuthCard() {
           </span>
           <Input
             type="password"
+            name="password"
             className="px-4 py-3 rounded-md bg-[#0B0F19] flex items-center text-[#64748B] font-geist text-sm"
           />
         </label>
@@ -58,15 +88,26 @@ export default function AuthCard() {
           </span>
           <Input
             type="password"
+            name="confirmPassword"
             className="px-4 py-3 rounded-md bg-[#0B0F19] flex items-center text-[#64748B] font-geist text-sm"
           />
         </label>
+
+        {passwordError && (
+          <div className="flex gap-3 p-4 rounded-md bg-red-100 justify-center">
+            <CircleX className="text-red-300"/>
+            <span className="text-black font-semibold">
+              Passwords do not match
+            </span>
+          </div>
+        )}
 
         <Input
           type="submit"
           value="Create Account"
           className="bg-[#2979FF] py-3.5 rounded-md text-sm font-semibold font-geist flex items-center justify-center"
         />
+        
       </form>
       <SocialDivider dividerText="Or" />
       <Button
