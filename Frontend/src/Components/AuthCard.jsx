@@ -3,15 +3,15 @@ import Input from "../Utilities/Input";
 import SocialDivider from "../Utilities/SocialDivider";
 import Button from "../Utilities/Button";
 import { FcGoogle } from "react-icons/fc";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams, useNavigate } from "react-router-dom";
 import { CircleX } from "lucide-react";
 import { useState } from "react";
-import {supabase} from '../supabase'
-
+import { supabase } from "../supabase";
 
 export default function AuthCard() {
   const [SearchParam] = useSearchParams();
   const email = SearchParam.get("email");
+  const navigate = useNavigate();
   const [passwordError, setPasswordError] = useState(false);
 
   async function handleSignUp(formData) {
@@ -24,13 +24,31 @@ export default function AuthCard() {
       setPasswordError(true);
       return;
     }
+
+    if (
+      fullName.trim() === "" ||
+      emailAddress.trim() === "" ||
+      password === ""
+    ) {
+      console.log("please fill all data");
+      return;
+    }
+
     setPasswordError(false);
 
-    const {data,error} = await supabase.auth.signUp({
-      Name:fullName,
-      email:emailAddress,
-      password:password
-    })
+    const { data, error } = await supabase.auth.signUp({
+      email: emailAddress,
+      password: password,
+      options: {
+        data: {
+          full_name: fullName,
+        },
+      },
+    });
+
+    if(!error){
+       navigate("/payment-checkout");
+    }
   }
 
   return (
@@ -95,7 +113,7 @@ export default function AuthCard() {
 
         {passwordError && (
           <div className="flex gap-3 p-4 rounded-md bg-red-100 justify-center">
-            <CircleX className="text-red-300"/>
+            <CircleX className="text-red-300" />
             <span className="text-black font-semibold">
               Passwords do not match
             </span>
@@ -107,7 +125,6 @@ export default function AuthCard() {
           value="Create Account"
           className="bg-[#2979FF] py-3.5 rounded-md text-sm font-semibold font-geist flex items-center justify-center"
         />
-        
       </form>
       <SocialDivider dividerText="Or" />
       <Button
