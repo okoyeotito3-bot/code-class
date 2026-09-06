@@ -9,7 +9,7 @@ export default function AuthCard() {
   const [SearchParam] = useSearchParams();
   const email = SearchParam.get("email");
   return (
-    <section className="flex flex-col items-center gap-8 p-12 rounded-sm bg-[#161B26]">
+    <section className="w-120 m-auto flex flex-col items-center gap-8 p-12 rounded-sm bg-[#161B26]">
       <AuthHeader
         AuthHeaderText="Create Your Account"
         AuthHeaderSubText="Join live programming classes in seconds"
