@@ -31,7 +31,7 @@ export default function AuthCard() {
           </span>
           <Input
             type="email"
-            value={email || ""}
+           defaultValue= {email }
             className="px-4 py-3 rounded-md bg-[#0B0F19] flex items-center text-[#64748B] font-geist text-sm"
             placeholder="name@domain.com"
           />
