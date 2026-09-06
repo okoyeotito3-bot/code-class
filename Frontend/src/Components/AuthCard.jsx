@@ -45,7 +45,12 @@ export default function AuthCard() {
         },
       },
     });
+console.log("SIGNUP DATA:", data);
+console.log("SIGNUP ERROR:", error);
 
+if (!error) {
+  navigate("/payment-checkout");
+}
     if(!error){
        navigate("/payment-checkout");
     }
