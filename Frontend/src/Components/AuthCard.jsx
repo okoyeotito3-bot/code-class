@@ -10,7 +10,7 @@ export default function AuthCard() {
   const email = SearchParam.get("email");
   return (
     <section className=" m-auto
-  flex flex-col items-center
+  flex flex-col 
   gap-8
   p-6 md:p-12
   rounded-sm

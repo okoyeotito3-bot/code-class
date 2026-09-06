@@ -15,7 +15,14 @@ export default function AuthLoginCard() {
   }
 
   return (
-    <section className="w-120 flex flex-col p-12 gap-8 rounded-lg bg-[#161B26] m-auto">
+    <section className=" m-auto
+  flex flex-col 
+  gap-8
+  p-6 md:p-12
+  rounded-sm
+  bg-[#161B26]
+  w-[calc(100%-2rem)]
+  max-w-120">
       <AuthHeader
         AuthHeaderText="Welcome Back"
         AuthHeaderSubText="Sign in to resume your curriculum"
