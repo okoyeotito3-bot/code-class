@@ -16,7 +16,14 @@ export default function Footer() {
           <h6 className="text-[#F8FAFC] font-bold font-[Geist-Mono] text-lg">
             Platform
           </h6>
-          <UnorderedList list1="Courses" list2="Pricing" list3="How It Works" />
+          <UnorderedList
+            list1="Courses"
+            to1="/Courses"
+            list2="Pricing"
+            to2="/Pricing"
+            list3="How It Works"
+            to3="/How It Works"
+          />
         </div>
 
         <div>

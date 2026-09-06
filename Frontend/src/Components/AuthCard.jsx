@@ -3,9 +3,11 @@ import Input from "../Utilities/Input";
 import SocialDivider from "../Utilities/SocialDivider";
 import Button from "../Utilities/Button";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 export default function AuthCard() {
+  const [SearchParam] = useSearchParams();
+  const email = SearchParam.get("email");
   return (
     <section className="flex flex-col items-center gap-8 p-12 rounded-sm bg-[#161B26]">
       <AuthHeader
@@ -29,6 +31,7 @@ export default function AuthCard() {
           </span>
           <Input
             type="email"
+            value={email || ""}
             className="px-4 py-3 rounded-md bg-[#0B0F19] flex items-center text-[#64748B] font-geist text-sm"
             placeholder="name@domain.com"
           />

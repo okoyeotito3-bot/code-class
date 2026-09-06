@@ -121,7 +121,8 @@ export default function DetailsContent() {
           </div>
           <Button
             text="Enroll in Cohort"
-            className="bg-[#2979FF] font-semibold text-sm font-geist py-3.5 rounded-md text-white cursor-pointer"
+            to="/Register"
+            className="bg-[#2979FF] font-semibold text-sm text-center font-geist py-3.5 rounded-md text-white cursor-pointer"
           />
           <div className="flex flex-col gap-4">
             <div className="flex gap-3">
@@ -177,9 +178,10 @@ export default function DetailsContent() {
             </div>
           </div>
           <p className="text-[#94A3B8] font-geist text-sm">
-            Otito designed internal browser mechanics at Google. She specializes
-            in training developers for performant, high-scale application
-            workflows.
+            Otito is a passionate software developer focused on building modern
+            web applications. He specializes in creating performant, scalable
+            applications and is also a dedicated tutor who enjoys helping
+            students understand coding concepts and develop practical skills.
           </p>
         </div>
       </div>

@@ -37,6 +37,7 @@ export default function CourseGrid() {
         courseButton={
           <Button
             text={course.price === 0 ? "Notify me" : "Enroll Now"}
+            to={course.price > 0 && `/${course.category}`}
             className={
               course.price === 0
                 ? "bg-[#242E42] rounded-md px-4 py-2.5 text-geist text-[#64748B] text-sm font-semibold cursor-pointer"
