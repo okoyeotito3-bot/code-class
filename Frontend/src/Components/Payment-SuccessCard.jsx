@@ -2,8 +2,11 @@ import { CheckIcon } from "lucide-react";
 import Button from "../Utilities/Button";
 export default function PaymentSuccesCard() {
   return (
-    <section className="flex flex-col gap-10 px-20 py-24 bg-[#0B0F19] items-center">
-      <CheckIcon size={30} className="text-white bg-green-900 rounded-md" />
+    <section className="flex flex-col gap-10 px-20 py-24 bg-[#0B0F19]">
+      <CheckIcon
+        size={30}
+        className="text-white bg-green-900 rounded-md m-auto"
+      />
       <div className="flex flex-col items-center gap-4">
         <span className="font-geist  font-extrabold text-lg text-white">
           Enrollment Confirmed!
@@ -23,7 +26,7 @@ export default function PaymentSuccesCard() {
           </div>
           <div className="flex justify-between">
             <span className="text-[#94A3B8] font-geist text-sm">
-              Start  Date
+              Start Date
             </span>
             <span className="text-white font-semibold">Jan 15, 2027</span>
           </div>
@@ -43,14 +46,12 @@ export default function PaymentSuccesCard() {
           </div>
         </div>
       </div>
-      
-        <Button
-          text="Go to Dashboard"
-          to="/dashboard"
-          className="bg-[#2979FF] px-8 py-3.5 rounded-md text-white font-geist text-sm"
-        />
-       
-     
+
+      <Button
+        text="Go to Dashboard"
+        to="/dashboard"
+        className="bg-[#2979FF] px-8 py-3.5 rounded-md text-white font-geist text-sm text-center"
+      />
     </section>
   );
 }
