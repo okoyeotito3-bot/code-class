@@ -2,7 +2,7 @@ import { CheckIcon } from "lucide-react";
 import Button from "../Utilities/Button";
 export default function PaymentSuccesCard() {
   return (
-    <section className="flex flex-col gap-10 px-20 py-24 bg-[#0B0F19]">
+    <section className="flex flex-col gap-10 p-8 md:px-20 md:py-24 bg-[#0B0F19]">
       <CheckIcon
         size={30}
         className="text-white bg-green-900 rounded-md m-auto"
