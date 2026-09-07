@@ -7,7 +7,7 @@ import LoginPage from "./Pages/Authetications/LoginPage";
 import ForgottenPassword from "./Pages/Authetications/ForgottenPassword";
 import PaymentCheckout from "./Pages/CheckOutPages/Payment-checkout";
 import PaystackSuccesful from "./Pages/CheckOutPages/PaystackSucces";
-
+import PaymentFailUi from "./Pages/CheckOutPages/PaymentFail";
 export default function App() {
   return (
     <>
@@ -19,7 +19,7 @@ export default function App() {
         <Route path="/javascript" element={<CourseDetails />} />
         <Route path="/Forgot-Password" element={<ForgottenPassword />} />
         <Route path="/payment-checkout" element={<PaymentCheckout/>} />
-        <Route path="/payment-succesfull" element={<PaystackSuccesful/>} />
+        <Route path="/payment-succesfull" element={<PaymentFailUi/>} />
       </Routes>
     </>
   );
