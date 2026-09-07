@@ -13,7 +13,8 @@ export default function PaymentSuccesCard() {
           and onboarding email have been sent.
         </span>
       </div>
-      <div className="bg-[#161B26] flex flex-col gap-4 p-6 rounded-md">
+
+      <div className="bg-[#161B26] flex flex-col gap-4 p-6 rounded-md w-full">
         <p className="text-white font-bold text-sm">Onboarding Summary</p>
         <div>
           <div className="flex justify-between">
@@ -22,7 +23,7 @@ export default function PaymentSuccesCard() {
           </div>
           <div className="flex justify-between">
             <span className="text-[#94A3B8] font-geist text-sm">
-              Start Date
+              Start  Date
             </span>
             <span className="text-white font-semibold">Jan 15, 2027</span>
           </div>
@@ -42,17 +43,14 @@ export default function PaymentSuccesCard() {
           </div>
         </div>
       </div>
-      <div className="flex gap-4 justify-center">
+      
         <Button
           text="Go to Dashboard"
           to="/dashboard"
-          className="bg-[#2979FF] px-8 py-3.5 rounded-md text-white font-geist text-sm whitespace-nowrap"
+          className="bg-[#2979FF] px-8 py-3.5 rounded-md text-white font-geist text-sm"
         />
-        <Button
-          text="View Course Schedule"
-          className="bg-[#161B26] px-8 py-3.5 rounded-md text-white font-geist text-sm whitespace-nowrap"
-        />
-      </div>
+       
+     
     </section>
   );
 }
