@@ -1,18 +1,18 @@
-import AuthHeader from "../Utilities/AuthHeader";
-import Input from "../Utilities/Input";
-import SocialDivider from "../Utilities/SocialDivider";
-import Button from "../Utilities/Button";
+import AuthHeader from "../../Utilities/AuthHeader";
+import Input from "../../Utilities/Input";
+import SocialDivider from "../../Utilities/SocialDivider";
+import Button from "../../Utilities/Button";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useSearchParams, useNavigate } from "react-router-dom";
 import { CircleX } from "lucide-react";
 import { useState } from "react";
-import { supabase } from "../supabase";
+import { supabase } from "../../supabase";
 
 export default function AuthCard() {
   const [SearchParam] = useSearchParams();
   const email = SearchParam.get("email");
   const navigate = useNavigate();
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
 
   async function handleSignUp(formData) {
     const fullName = formData.get("fullName");
@@ -21,7 +21,7 @@ export default function AuthCard() {
     const confirmPassword = formData.get("confirmPassword");
 
     if (password !== confirmPassword) {
-      setErrorMessage('Password Mismatch');
+      setErrorMessage("Password Mismatch");
       return;
     }
 
@@ -30,7 +30,7 @@ export default function AuthCard() {
       emailAddress.trim() === "" ||
       password === ""
     ) {
-      setErrorMessage('Fill All Field');
+      setErrorMessage("Fill All Field");
       return;
     }
 
@@ -46,12 +46,9 @@ export default function AuthCard() {
       },
     });
 
-
-
-    if(!error){
-       navigate("/payment-checkout");
+    if (!error) {
+      navigate("/payment-checkout");
     }
-
   }
 
   return (
@@ -117,9 +114,7 @@ export default function AuthCard() {
         {errorMessage && (
           <div className="flex gap-3 p-4 rounded-md bg-red-100 justify-center">
             <CircleX className="text-red-300" />
-            <span className="text-black font-semibold">
-              {errorMessage}
-            </span>
+            <span className="text-black font-semibold">{errorMessage}</span>
           </div>
         )}
 

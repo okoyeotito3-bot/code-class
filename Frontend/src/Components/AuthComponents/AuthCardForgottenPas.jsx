@@ -1,6 +1,6 @@
 import { CheckCircle } from "lucide-react";
-import AuthHeader from "../Utilities/AuthHeader";
-import Input from "../Utilities/Input";
+import AuthHeader from "../../Utilities/AuthHeader";
+import Input from "../../Utilities/Input";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 export default function AuthCardForgottenPass() {

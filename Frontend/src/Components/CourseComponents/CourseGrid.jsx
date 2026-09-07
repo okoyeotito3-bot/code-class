@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { supabase } from "../supabase";
-import Grid from "../Utilities/Grid";
+import { supabase } from "../../supabase";
+import Grid from "../../Utilities/Grid";
 import { PlusCircle } from "lucide-react";
-import Button from "../Utilities/Button";
+import Button from "../../Utilities/Button";
 
 export default function CourseGrid() {
   const [courses, setCourses] = useState([]);

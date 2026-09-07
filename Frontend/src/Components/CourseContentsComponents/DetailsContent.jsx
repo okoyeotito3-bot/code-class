@@ -1,7 +1,7 @@
 import { ChevronDown, CheckCircle, MinusCircle } from "lucide-react";
-import { supabase } from "../supabase";
+import { supabase } from "../../supabase";
 import { useEffect, useState } from "react";
-import Button from "../Utilities/Button";
+import Button from "../../Utilities/Button";
 
 export default function DetailsContent() {
   const [modules, setModules] = useState([]);

@@ -1,12 +1,12 @@
-import AuthHeader from "../Utilities/AuthHeader";
-import Input from "../Utilities/Input";
+import AuthHeader from "../../Utilities/AuthHeader";
+import Input from "../../Utilities/Input";
 import { Link, useNavigate } from "react-router-dom";
-import Button from "../Utilities/Button";
-import SocialDivider from "../Utilities/SocialDivider";
+import Button from "../../Utilities/Button";
+import SocialDivider from "../../Utilities/SocialDivider";
 import { FcGoogle } from "react-icons/fc";
 import { CircleX } from "lucide-react";
 import { useState } from "react";
-import { supabase } from "../supabase";
+import { supabase } from "../../supabase";
 
 export default function AuthLoginCard() {
   const navigate = useNavigate();

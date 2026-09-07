@@ -1,4 +1,4 @@
-import Button from "../Utilities/Button";
+import Button from "../../Utilities/Button";
 
 export default function FeatureCourse() {
   return (

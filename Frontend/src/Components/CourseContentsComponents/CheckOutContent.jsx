@@ -1,7 +1,7 @@
 import { Calendar, CheckCircle, CheckIcon } from "lucide-react";
 import PaystackPop from "@paystack/inline-js";
-import Input from "../Utilities/Input";
-import {supabase} from '../supabase'
+import Input from "../../Utilities/Input";
+import {supabase} from '../../supabase'
 import { FaCreditCard } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 

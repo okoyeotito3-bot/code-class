@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import Input from "../Utilities/Input";
-import Button from "../Utilities/Button";
+import Input from "../../Utilities/Input";
+import Button from "../../Utilities/Button";
 
 export default function FinalCta() {
   const navigate = useNavigate();

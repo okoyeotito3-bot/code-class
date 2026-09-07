@@ -1,12 +1,12 @@
 import { AlertCircle } from "lucide-react";
 import { FcCancel } from "react-icons/fc";
-import Button from '../Utilities/Button'
+import Button from '../../Utilities/Button'
 
 export default function PaymentFailCard() {
   return (
     <section className="flex flex-col m-auto gap-20 p-8 md:w-2/3 lg:w-2/3  md:px-20 lg:px-20 md:py-30 lg:py-30">
-      <FcCancel size={30} className="text-[#EF4444]"/>
-      <div className="flex flex-col gap-4">
+      <FcCancel size={30} className="text-white rounded-md bg-red-200 m-auto"/>
+      <div className="flex flex-col gap-4 items-center">
         <p className="text-extrabold font-geist text-white text-lg">Payment Failed</p>
         <p className="text-[#94A3B8] font-geist text-sm">
           Your card was declined. Please try again or use a different payment
