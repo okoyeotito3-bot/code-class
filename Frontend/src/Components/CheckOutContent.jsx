@@ -26,7 +26,7 @@ const navigate = useNavigate()
     currency: "NGN",
 
     onSuccess: (transaction) => {
-      navigate('/dashboard')
+      navigate('/payment-succesfull')
     },
 
     onCancel: () => {

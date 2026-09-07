@@ -6,18 +6,20 @@ import RegsiterPage from "./Pages/Authetications/RegisterPage";
 import LoginPage from "./Pages/Authetications/LoginPage";
 import ForgottenPassword from "./Pages/Authetications/ForgottenPassword";
 import PaymentCheckout from "./Pages/CheckOutPages/Payment-checkout";
+import PaystackSuccesful from "./Pages/CheckOutPages/PaystackSucces";
 
 export default function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home/>} />
         <Route path="/Register" element={<RegsiterPage />} />
         <Route path="/Login" element={<LoginPage/>} />
         <Route path="/Courses" element={<CoursePage />} />
         <Route path="/javascript" element={<CourseDetails />} />
         <Route path="/Forgot-Password" element={<ForgottenPassword />} />
         <Route path="/payment-checkout" element={<PaymentCheckout/>} />
+        <Route path="/payment-succesfull" element={<PaystackSuccesful/>} />
       </Routes>
     </>
   );

@@ -12,7 +12,7 @@ export default function AuthCard() {
   const [SearchParam] = useSearchParams();
   const email = SearchParam.get("email");
   const navigate = useNavigate();
-  const [passwordError, setPasswordError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   async function handleSignUp(formData) {
     const fullName = formData.get("fullName");
@@ -21,7 +21,7 @@ export default function AuthCard() {
     const confirmPassword = formData.get("confirmPassword");
 
     if (password !== confirmPassword) {
-      setPasswordError(true);
+      setErrorMessage('Password Mismatch');
       return;
     }
 
@@ -30,7 +30,7 @@ export default function AuthCard() {
       emailAddress.trim() === "" ||
       password === ""
     ) {
-      console.log("please fill all data");
+      setErrorMessage('Fill All Field');
       return;
     }
 
@@ -45,15 +45,13 @@ export default function AuthCard() {
         },
       },
     });
-console.log("SIGNUP DATA:", data);
-console.log("SIGNUP ERROR:", error);
 
-if (!error) {
-  navigate("/payment-checkout");
-}
+
+
     if(!error){
        navigate("/payment-checkout");
     }
+
   }
 
   return (
@@ -116,11 +114,11 @@ if (!error) {
           />
         </label>
 
-        {passwordError && (
+        {errorMessage && (
           <div className="flex gap-3 p-4 rounded-md bg-red-100 justify-center">
             <CircleX className="text-red-300" />
             <span className="text-black font-semibold">
-              Passwords do not match
+              {errorMessage}
             </span>
           </div>
         )}
