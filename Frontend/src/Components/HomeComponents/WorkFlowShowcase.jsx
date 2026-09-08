@@ -1,6 +1,6 @@
 export default function WorkShowCase(){
     return(
-        <section className="w-full flex flex-col p-4 gap-4 md:gap-16 lg:gap-16 md:py-[80px] md:px-[120px] lg:py-[80px] lg:px-[120px]"> 
+        <section className="w-full flex flex-col p-4 gap-4 md:gap-16 lg:gap-16 md:py-2 md:px-30 lg:py-20 lg:px-30]"> 
             <header className="flex flex-col gap-4 w-full items-center">
                 <p className="text-[#00E676] font-[geist-mono] font-semibold text-sm ">INTEGRATION WORKFLOW</p>
                 <p className="font-geist font-extrabold text-[#F8FAFC] text-lg md:text-4xl">Real-Time Assessment Pipeline</p>

@@ -1,5 +1,5 @@
 import NavBar from '../../Components/Navbar'
-import AuthLoginCard from '../../Components/AuthCardLogin'
+import AuthLoginCard from '../../Components/AuthComponents/AuthCardLogin'
 import Footer from '../../Components/Footer'
 export default function LoginPage(){
 

@@ -1,5 +1,5 @@
 import NavBar from '../../Components/Navbar'
-import PaymentSuccesCard from '../../Components/Payment-SuccessCard'
+import PaymentSuccesCard from '../../Components/PaymentComponents/Payment-SuccessCard'
 import MiniFooter from '../../Utilities/MiniFooter'
 export default function PaystackSuccesful(){
     return(

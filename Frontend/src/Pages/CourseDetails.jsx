@@ -1,6 +1,6 @@
 import NavBar from "../Components/Navbar";
-import DetailsHero from "../Components/DetailsHero";
-import DeatialsContent from "../Components/DetailsContent";
+import DetailsHero from "../Components/CourseDetails/DetailsHero";
+import DeatialsContent from "../Components/CourseDetails/DetailsContent";
 import Footer from "../Components/Footer";
 
 export default function CourseDetails() {

@@ -1,5 +1,5 @@
 import NavBar from '../../Components/Navbar'
-import AuthCardForgottenPass from '../../Components/AuthCardForgottenPas'
+import AuthCardForgottenPass from '../../Components/AuthComponents/AuthCardForgottenPas'
 import Footer from '../../Components/Footer'
 
 export default function ForgottenPassword(){

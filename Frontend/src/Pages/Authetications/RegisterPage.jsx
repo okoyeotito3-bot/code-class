@@ -1,5 +1,5 @@
 import NavBar from "../../Components/Navbar"
-import AuthCard from "../../Components/AuthCard"
+import AuthCard from "../../Components/AuthComponents/AuthCard"
 import Footer from "../../Components/Footer"
 export default function RegisterPage(){
     return(

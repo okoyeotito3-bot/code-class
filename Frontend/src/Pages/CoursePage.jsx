@@ -1,7 +1,7 @@
 import { supabase } from "../supabase";
 import NavBar from "../Components/Navbar";
-import CourseHero from "../Components/CourseHero";
-import CourseGrid from "../Components/CourseGrid";
+import CourseHero from "../Components/CourseComponents/CourseHero";
+import CourseGrid from "../Components/CourseComponents/CourseGrid";
 import Footer from "../Components/Footer";
 export default function CoursePage() {
   return (

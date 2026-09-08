@@ -1,5 +1,5 @@
 import NavBar from "../../Components/Navbar";
-import PaymentFailCard from "../../Components/PaymentFailCard";
+import PaymentFailCard from "../../Components/PaymentComponents/PaymentFailCard";
 import MiniFooter from "../../Utilities/MiniFooter";
 
 export default function PaymentFailUi() {

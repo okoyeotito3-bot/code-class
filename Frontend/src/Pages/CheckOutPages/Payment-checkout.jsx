@@ -1,5 +1,5 @@
 import NavBar from "../../Components/Navbar";
-import CheckOutContent from "../../Components/CheckOutContent";
+import CheckOutContent from "../../Components/PaymentComponents/CheckOutContent";
 import Footer from '../../Components/Footer'
 
 export default function PaymentCheckout() {
