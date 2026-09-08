@@ -34,7 +34,7 @@ export default function NavBar() {
           <Button
             text="Login"
             to="/Login"
-            className="w-9.25 h-4.5 font-geist font-medium text-[14px] text-[#94A3B8]  cursor-pointer"
+            className="w-9.25 h-4.5 font-['geist']  text-sm text-[#94A3B8] cursor-pointer"
           />
           <Button
             text="Start Learning"
@@ -64,7 +64,7 @@ export default function NavBar() {
             <Button
               text="Login"
               to="/Login"
-              className="w-44.25 flex items-center justify-start py-3 px-6 font-geist text-sm font-bold text-white cursor-pointer"
+              className="w-44.25 flex items-center justify-start py-3 px-6 font-['geist'] text-sm font-bold text-white cursor-pointer"
             />
             <Button
               text="Start Learning"

@@ -13,7 +13,7 @@ import Footer from '../Components/Footer'
 export default function Home(){
     return(
         <>
-       <div className='bg-[#0B0F19]'>
+       <div className='bg-[#0B0F19] flex flex-col w-screen'>
          <NavBar/>
          <Hero/>
          <SocialProof/>
