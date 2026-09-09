@@ -15,6 +15,7 @@ export default function AuthCard() {
   const [errorMessage, setErrorMessage] = useState("");
 
   async function handleSignUp(formData) {
+
     const fullName = formData.get("fullName");
     const emailAddress = formData.get("emailAddress");
     const password = formData.get("password");
@@ -22,6 +23,7 @@ export default function AuthCard() {
 
     if (password !== confirmPassword) {
       setErrorMessage("Password Mismatch");
+      console.log('wrong password')
       return;
     }
 
@@ -31,10 +33,11 @@ export default function AuthCard() {
       password === ""
     ) {
       setErrorMessage("Fill All Field");
+      console.log('Fill All Field')
       return;
     }
 
-    setPasswordError(false);
+    setErrorMessage(false);
 
     const { data, error } = await supabase.auth.signUp({
       email: emailAddress,
@@ -46,6 +49,15 @@ export default function AuthCard() {
       },
     });
 
+
+    console.log(supabase)
+     console.log(data)
+
+if(error){
+  console.log(error)
+}else{
+  console.log(data)
+}
     if (!error) {
       navigate("/payment-checkout");
     }
@@ -74,7 +86,7 @@ export default function AuthCard() {
           <Input
             type="text"
             name="fullName"
-            className="px-4 py-3 rounded-md bg-[#0B0F19] flex items-center text-[#64748B] font-geist text-sm "
+            className="px-4 py-3 rounded-md bg-[#0B0F19] flex items-center text-[#64748B] font-['geist'] text-sm "
             placeholder="e.g. John Doe"
           />
         </label>
@@ -113,7 +125,7 @@ export default function AuthCard() {
 
         {errorMessage && (
           <div className="flex gap-3 p-4 rounded-md bg-red-100 justify-center">
-            <CircleX className="text-red-300" />
+            <CircleX className="text-red-300" onClick={()=> setErrorMessage("")}/>
             <span className="text-black font-semibold">{errorMessage}</span>
           </div>
         )}

@@ -15,6 +15,7 @@ const navigate = useNavigate()
 
    if (error || !data.user) {
     console.log("User is not logged in");
+    console.log(data)
     return;
   }
   

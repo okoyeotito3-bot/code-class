@@ -20,13 +20,15 @@ export default function AuthLoginCard() {
       email,
       password,
     });
-
+console.log(data)
     if (error) {
       setPasswordIsWrong(true);
       return;
-    }
+    }else{
     setPasswordIsWrong(false);
-    navigate("/dashboard");
+    navigate("/student-dashboard")
+    }
+   ;
   }
 
   return (
@@ -46,7 +48,7 @@ export default function AuthLoginCard() {
       />
       <form action={handleLogin} className="flex flex-col gap-4">
         <label className="flex flex-col gap-2">
-          <span className="text-[#94A3B8] font-semibold font-[Geist-Mono]">
+          <span className="text-[#94A3B8] font-semibold font-['Geist-Mono']">
             EMAIL ADDRESS
           </span>
           <Input
@@ -57,7 +59,7 @@ export default function AuthLoginCard() {
           />
         </label>
         <label className="flex flex-col gap-2">
-          <span className="text-[#94A3B8] font-semibold font-[Geist-Mono]">
+          <span className="text-[#94A3B8] font-semibold font-['Geist-Mono']">
             PASSWORD
           </span>
           <Input
@@ -82,7 +84,7 @@ export default function AuthLoginCard() {
         </div>
         {passwordIsWrong && (
           <div className="flex gap-3 p-4 rounded-md bg-red-100 justify-center">
-            <CircleX className="text-shadow-red-300" />
+            <CircleX className="text-shadow-red-300" onClick={()=> setPasswordIsWrong(false) }/>
             <span className="text-black font-semibold">Wrong Credentials</span>
           </div>
         )}

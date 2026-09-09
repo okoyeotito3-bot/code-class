@@ -8,6 +8,7 @@ import ForgottenPassword from "./Pages/Authetications/ForgottenPassword";
 import PaymentCheckout from "./Pages/CheckOutPages/Payment-checkout";
 import PaystackSuccesful from "./Pages/CheckOutPages/PaystackSucces";
 import PaymentFailUi from "./Pages/CheckOutPages/PaymentFail";
+import StudentDashboard from "./Pages/StudentDashboard/StudentDashboard";
 export default function App() {
   return (
     <>
@@ -20,6 +21,8 @@ export default function App() {
         <Route path="/Forgot-Password" element={<ForgottenPassword />} />
         <Route path="/payment-checkout" element={<PaymentCheckout/>} />
         <Route path="/payment-succesfull" element={<PaymentFailUi/>} />
+         <Route path="/student-dashboard" element={<StudentDashboard/>} />
+
       </Routes>
     </>
   );
