@@ -3,12 +3,13 @@ import { supabase } from "../../supabase";
 import Grid from "../../Utilities/Grid";
 import { PlusCircle } from "lucide-react";
 import Button from "../../Utilities/Button";
+import { useNavigate } from "react-router-dom";
 
 export default function CourseGrid() {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  const navigate = useNavigate()
   async function getCourses() {
     try {
       const { data, error } = await supabase.from("courses").select("*");
@@ -25,6 +26,9 @@ export default function CourseGrid() {
     }
   }
 
+  function handleSelectCourse(courseId) {
+  console.log(courseId)
+  }
   useEffect(() => {
     getCourses();
   }, []);
@@ -38,6 +42,8 @@ export default function CourseGrid() {
           <Button
             text={course.price === 0 ? "Notify me" : "Enroll Now"}
             to={course.price > 0 && `/${course.category}`}
+            onClick={() => handleSelectCourse(course.id)}
+
             className={
               course.price === 0
                 ? "bg-[#242E42] rounded-md px-4 py-2.5 text-geist text-[#64748B] text-sm font-semibold cursor-pointer"

@@ -26,6 +26,11 @@ export default function AuthCard() {
       console.log('wrong password')
       return;
     }
+   if (password.value.length < 6) {
+      setErrorMessage("Password Mismatch");
+      console.log('Password Must be up to 6 Characters')
+      return;
+    }
 
     if (
       fullName.trim() === "" ||
@@ -50,8 +55,7 @@ export default function AuthCard() {
     });
 
 
-    console.log(supabase)
-     console.log(data)
+   
 
 if(error){
   console.log(error)

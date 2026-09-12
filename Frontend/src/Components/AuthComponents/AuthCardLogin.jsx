@@ -10,7 +10,7 @@ import { supabase } from "../../supabase";
 
 export default function AuthLoginCard() {
   const navigate = useNavigate();
-  const [passwordIsWrong, setPasswordIsWrong] = useState(false);
+  const [passwordIsWrong, setPasswordIsWrong] = useState("");
 
   async function handleLogin(formData) {
     const email = formData.get("email");
@@ -20,15 +20,14 @@ export default function AuthLoginCard() {
       email,
       password,
     });
-console.log(data)
+
     if (error) {
-      setPasswordIsWrong(true);
+      setPasswordIsWrong("Wrong Credentials");
       return;
-    }else{
-    setPasswordIsWrong(false);
-    navigate("/student-dashboard")
+    } else {
+      setPasswordIsWrong(false);
+      navigate("/student-dashboard");
     }
-   ;
   }
 
   return (
@@ -84,8 +83,11 @@ console.log(data)
         </div>
         {passwordIsWrong && (
           <div className="flex gap-3 p-4 rounded-md bg-red-100 justify-center">
-            <CircleX className="text-shadow-red-300" onClick={()=> setPasswordIsWrong(false) }/>
-            <span className="text-black font-semibold">Wrong Credentials</span>
+            <CircleX
+              className="text-shadow-red-300"
+              onClick={() => setPasswordIsWrong("")}
+            />
+            <span className="text-black font-semibold">{passwordIsWrong}</span>
           </div>
         )}
         <Button

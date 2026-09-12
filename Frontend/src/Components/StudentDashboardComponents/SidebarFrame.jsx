@@ -9,15 +9,16 @@ import {
   Video,
   X,
 } from "lucide-react";
-import { GrDashboard } from "react-icons/gr";
+
 
 export default function SideBarFrame({logOutOfDashaorad,closeSideBar,className}) {
   return (
-    <section className={`bg-[#161B26] flex flex-col px-6 py-8 transition-transform duration-500 ${className}`}>
+   <section
+  className={`bg-[#161B26] flex-col px-6 py-8 transition-transform duration-500 md:flex lg:flex ${className}`}>
       <div className="flex flex-col gap-20">
       <div className="flex justify-between">
           <img src="brand.png" alt="brandlogo" />
-          <X className="text-[#2979FF] cursor-pointer" size={20} onClick={closeSideBar}/>
+          <X className="text-[#2979FF] cursor-pointer md:hidden lg:hidden" size={20} onClick={closeSideBar}/>
       </div>
         <div className="flex flex-col gap-2 items-start">
           <div className="flex gap-3 px-4 py-3 rounded-sm items-center cursor-pointer  w-full">

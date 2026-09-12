@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-export default function Button({ text, icon, className, to }) {
+export default function Button({ text, icon, className, to,onClick }) {
   if (to) {
     return (
-      <Link to={to} className={className}>
+      <Link to={to} className={className} onClick={onClick}>
         {icon}
         {text}
       </Link>
@@ -11,7 +11,7 @@ export default function Button({ text, icon, className, to }) {
   }
 
   return (
-    <button className={className}>
+    <button className={className} onClick={onClick}>
       {icon}
       {text}
     </button>
