@@ -1,7 +1,8 @@
+import BoardHeader from "./studentDashBoardHeader";
 import { useEffect, useState } from "react";
 import { supabase } from "../../supabase";
 import Button from "../../Utilities/Button";
-import { Bell, Check, MessageSquare, UserRound } from "lucide-react";
+import {Check, MessageSquare} from "lucide-react";
 
 export default function StudentBord({ className }) {
   const [userName, setUserName] = useState("");
@@ -30,26 +31,10 @@ export default function StudentBord({ className }) {
 
   return (
     <section className={`flex-col p-2 w-full gap-8 ${className}`}>
-      <header className="w-full pb-8 flex flex-col gap-4 justify-between md:flex-row lg:flex-row">
-        <div className="flex flex-col gap-1">
-          <h1 className="text-white font-['geist'] font-extrabold text-lg">
-            Welcome back,{userName || "User"}{" "}
-          </h1>
-          <span className="text-[#94A3B8] font-['geist'] text-sm">
-            {todayDate}
-          </span>
-        </div>
-        <div className="flex sm: gap-8">
-          <Bell className="text-[#94A3B8]" size={20} />
-          <div className="">
-            {UserImage ? (
-              <img src="" alt="" />
-            ) : (
-              <UserRound size={20} className="text-[#94A3B8]" />
-            )}
-          </div>
-        </div>
-      </header>
+       <BoardHeader
+           text= {`Welcome back,${ userName || 'user'} `}
+           subtext={todayDate}
+           />
 
       <section className="flex flex-col gap-6 md:flex-row lg:flex-row">
         <div className="w-full flex flex-col p-6 gap-5 bg-[#161B26] rounded-md">

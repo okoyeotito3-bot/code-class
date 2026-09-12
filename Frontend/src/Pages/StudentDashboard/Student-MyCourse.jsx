@@ -1,9 +1,9 @@
 import { MenuIcon } from "lucide-react";
 import SideBarFrame from "../../Components/StudentDashboardComponents/SidebarFrame";
-import StudentBord from "../../Components/StudentDashboardComponents/StudentBoard";
+import StudentCourseBoard from "../../Components/StudentDashboardComponents/StudentCourseBoard";
 import { useState } from "react";
 
-export default function StudentDashboard() {
+export default function StudentCourse() {
   const [sideBarIsOpen, setSideBar] = useState(false);
   return (
     <section className="flex bg-[#0B0F19] w-full ">
@@ -19,9 +19,9 @@ export default function StudentDashboard() {
           closeSideBar={() => setSideBar(false)}
           className={sideBarIsOpen ? "flex" : "hidden"}
         />
-        <StudentBord 
+       <StudentCourseBoard
        className={sideBarIsOpen ? "hidden" : "flex"}
-        />
+       />
       </main>
     </section>
   );

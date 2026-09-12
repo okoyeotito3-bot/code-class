@@ -9,6 +9,7 @@ import {
   Video,
   X,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 export default function SideBarFrame({logOutOfDashaorad,closeSideBar,className}) {
@@ -23,11 +24,11 @@ export default function SideBarFrame({logOutOfDashaorad,closeSideBar,className})
         <div className="flex flex-col gap-2 items-start">
           <div className="flex gap-3 px-4 py-3 rounded-sm items-center cursor-pointer  w-full">
             <Grid  className="text-[#2979FF]" size={20}/>
-            <p className="text-[#2979FF] font-['geist'] text-sm font-bold">DashBoard</p>
+            <Link to='/student-dashboard' className="text-[#2979FF] font-['geist'] text-sm font-bold">DashBoard</Link>
           </div>
           <div className="flex gap-3 px-4 py-3 rounded-sm items-center cursor-pointer  w-full">
             <Book className="text-[#2979FF]" size={20}/>
-            <p className="text-[#2979FF] font-['geist'] text-sm font-bold">My Course</p>
+            <Link to='/student-course' className="text-[#2979FF] font-['geist'] text-sm font-bold">My Course</Link>
           </div>
           <div className="flex gap-3 px-4 py-3 rounded-sm items-center cursor-pointer  w-full">
             <File className="text-[#2979FF]" size={20}/>
