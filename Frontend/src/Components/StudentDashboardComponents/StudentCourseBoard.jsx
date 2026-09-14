@@ -1,7 +1,7 @@
 import { Check, Key, Lock } from "lucide-react";
 import BoardHeader from "./studentDashBoardHeader";
 import userboard from "../../mockup";
-
+import Button from '../../Utilities/Button'
 export default function StudentCourseBoard({ className }) {
   const progress = "35";
 
@@ -11,7 +11,7 @@ export default function StudentCourseBoard({ className }) {
         text="My Enrolled Course"
         subtext="Track your curriculum progress and syllabus roadmaps."
       />
-      <section className="flex gap-8 w-full">
+      <section className="flex flex-col md:flex-row lg:flex-row gap-8 w-full">
         <div className="flex flex-col gap-6 w-full">
           <div className="flex flex-col items-start md:flex-row lg:flex-row gap-6 p-8 md:items-center lg:items-center">
             <div
@@ -89,7 +89,24 @@ export default function StudentCourseBoard({ className }) {
           </div>
         </div>
 
-        <div></div>
+        <div className="flex flex-col gap-5 p-6 bg-[#161B26] self-start">
+          <p className="text-white font-bold font-['Geist-Mono']">YOUR INSTRUCTOR</p>
+          <div className="flex gap-4 items-center">
+            <img src="tutor.jpg" alt="teacherImage" className="w-12 h-12 object-cover rounded-full shadow-2xl"/>
+            <div className="flex flex-col gap-1">
+              <span className="text-base text-white font-['geist']">Otito Okoye</span>
+              <span className="text-[#2979FF] font-['Geist-Mono'] text-sm">Senior Developer</span>
+            </div>
+          </div>
+          <span className="text-[#94A3B8] font-['geist'] text-sm">
+            "Always focus on computational thinking over memorizing APIs. 
+            Master how the asynchronous event loop manages tasks."
+          </span>
+          <Button
+          text='Ask a Question'
+          className='bg-[#2979FF] px-4 py-3 text-center rounded-md cursor-pointer text-white font-bold font-["geist"] text-sm'
+          />
+        </div>
       </section>
     </section>
   );
