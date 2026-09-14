@@ -2,12 +2,21 @@ import { ChevronDown, CheckCircle, MinusCircle } from "lucide-react";
 import { supabase } from "../../supabase";
 import { useEffect, useState } from "react";
 import Button from "../../Utilities/Button";
+import {allCourses} from '../../mockup'
+import { useParams } from "react-router-dom";
 
 export default function DetailsContent() {
+
   const [modules, setModules] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+   const { courseId } = useParams();
+   
+   const course = allCourses.filter(c => c.courseId === Number(courseId))
+   console.log(course)
+
+   
   async function getModules() {
     try {
       const { data, error } = await supabase.from("modules").select("*");
@@ -27,18 +36,19 @@ export default function DetailsContent() {
     getModules();
   }, []);
 
-  const modulesData = modules.map((module) => {
+  const modulesData = course[0].moduleCurriculum.map((module) => {
     return (
       <details key={module.id} className="group flex flex-col gap-2">
         <summary className="text-white font-geist text-sm font-bold list-none flex gap-4 items-center [&::-webkit-details-marker]:hidden cursor-pointer">
-          <span> {module.topic}</span>
+          <span> {module.title}</span>
           <ChevronDown className="group-open:hidden text-[#2979FF]" />
           <MinusCircle className="hidden group-open:block text-[#2979FF]" />
         </summary>
-        <p className="text-[#94A3B8] font-geist text-sm">{module.subtopic}</p>
+        <p className="text-[#94A3B8] font-geist text-sm">{module.briefTiltle}</p>
       </details>
     );
   });
+
 
   return (
     <section className="w-full p-4 gap-8 flex flex-col md:flex-row lg:flex-row md:px-20 md:pt-16 md:pb-30 lg:px-20 lg:pt-16 lg:pb-30">
@@ -48,12 +58,7 @@ export default function DetailsContent() {
             COURSE OVERVIEW
           </span>
           <span className="text-[#94A3B8] font-geist text-sm">
-            This cohort course takes you deep into the heart of vanilla
-            JavaScript. Rather than just learning syntax APIs, you'll dissect
-            closures, execution scopes, event loops, and asynchronous runtime
-            rules. To prove mastery, you'll complete assessments directly
-            compiled on CodePen workspaces and reviewed under strict FAANG
-            quality-standards.
+            {course[0].courseOverView}
           </span>
         </div>
 
@@ -63,37 +68,24 @@ export default function DetailsContent() {
           </p>
 
           <div className="flex flex-col gap-3">
-            <div className="flex gap-3 items-center">
-              <CheckCircle className="text-[#00E676] hidden md:block lg:block" />
-              <span className="text-[#94A3B8] font-gesit text-sm">
-                Execution Context, Call Stack Mechanics, and Event Loop cycles.
-              </span>
-            </div>
-            <div className="flex gap-3 items-center">
-              <CheckCircle className="text-[#00E676] hidden md:block lg:block" />
-              <span className="text-[#94A3B8] font-gesit text-sm">
-                Asynchronous patterns: raw Promises, native Async/Await
-                operations, and custom microtask schedulers.
-              </span>
-            </div>
-            <div className="flex gap-3 items-center">
-              <CheckCircle className="text-[#00E676] hidden md:block lg:block" />
-              <span className="text-[#94A3B8] font-gesit text-sm">
-                Memory architecture: garbage collection routines, heap
-                mechanics, and debugging severe leak states.
-              </span>
-            </div>
-            <div className="flex gap-3 items-center">
-              <CheckCircle className="text-[#00E676] hidden md:block lg:block" />
-              <span className="text-[#94A3B8] font-gesit text-sm">
-                Vite pipeline structures and modern bundling strategies.
-              </span>
-            </div>
+             {course[0].whatYouWillMaster.map(
+              c =>{
+                return(
+                  <div className="flex gap-3 items-center">
+                  <CheckCircle className="text-[#00E676] hidden md:block lg:block" />
+                  <span className="text-[#94A3B8] font-gesit text-sm">
+                  {c}
+                 </span>
+                  </div>
+                )
+              }
+             )}
           </div>
         </div>
+
         <div className="flex flex-col gap-4">
           <p className="text-[#2979FF] font-bold text-sm font-[Geist-Mono]">
-            12-MODULE CURRICULUM
+            {course[0].moduleCurriculum.length}-MODULE CURRICULUM
           </p>
           <div className="flex flex-col gap-2">{modulesData}</div>
         </div>
@@ -102,9 +94,7 @@ export default function DetailsContent() {
             Prerequisites
           </span>
           <span className="text-[#94A3B8] font-geist text-sm">
-            This program requires basic computer literacy, a modern web browser,
-            and an enthusiastic mindset. We walk through environment
-            configurations from scratch.
+           {course[0].prerequisites}
           </span>
         </div>
       </div>
@@ -116,11 +106,11 @@ export default function DetailsContent() {
               TUITION COST
             </span>
             <p className="text-[#00E676] font-[Geist-Mono]">
-              $299 /<span className="text-[#94A3B8]"> total</span>
+              NGN:{course[0].price} /<span className="text-[#94A3B8]"> total</span>
             </p>
           </div>
           <Button
-            text="Enroll in Cohort"
+            text={`Enroll in (${course[0].course})`}
             to="/Register"
             className="bg-[#2979FF] font-semibold text-sm text-center font-geist py-3.5 rounded-md text-white cursor-pointer"
           />
@@ -170,18 +160,15 @@ export default function DetailsContent() {
             />
             <div className="flex flex-col gap-1">
               <span className="text-white font-bold text-sm font-geist">
-                Otito Okoye
+               {course[0].instructorName}
               </span>
               <span className="text-[#94A3B8] font-[Geist-Mono] text-sm">
-                Lead Instructor
+                  {course[0].instructorRole}
               </span>
             </div>
           </div>
           <p className="text-[#94A3B8] font-geist text-sm">
-            Otito is a passionate software developer focused on building modern
-            web applications. He specializes in creating performant, scalable
-            applications and is also a dedicated tutor who enjoys helping
-            students understand coding concepts and develop practical skills.
+           {course[0].aboutInstructor}
           </p>
         </div>
       </div>

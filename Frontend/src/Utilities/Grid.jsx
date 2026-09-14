@@ -1,12 +1,11 @@
-import Button from "./Button";
+
 
 export default function Card({
-  category,
-  duration,
-  title,
-  description,
-  level,
+  course,
+  coursePubHeader,
+ courseOverView,
   price,
+   learningDuration,
   courseButton,
 }) {
   return (
@@ -14,21 +13,21 @@ export default function Card({
       <div className="bg-[#1F2638] flex flex-col p-5 gap-4">
         <div className="flex justify-between">
           <span className="text-[#FFD600] font-[Geist-Mono] text-sm font-semibold">
-            {category}
+            {course}
           </span>
           <span className="text-[#94A3B8] text-sm font-[Geist-Mono]">
-            {duration}
+          { learningDuration}
           </span>
         </div>
-        <p className="font-gesit font-extrabold text-lg text-white">{title}</p>
+        <p className="font-gesit font-extrabold text-lg text-white">{coursePubHeader}</p>
       </div>
       <div className="flex flex-col gap-5 p-6 opacity-90 bg-[#1F2638]">
-        <p className="text-[#94A3B8] font-geist] text-sm">{description}</p>
+        <p className="text-[#94A3B8] font-geist] text-sm">{courseOverView}</p>
         <p className="flex gap-2 items-end">
           <span className="text-[#64748B] font-[Geist-Mono] text-sm">
             level:
           </span>
-          <span className="text-[#00E5FF]">{level}</span>
+          <span className="text-[#00E5FF]">Begginer to Advance</span>
         </p>
         <div className="flex justify-between">
           <div className="flex flex-col gap-1">

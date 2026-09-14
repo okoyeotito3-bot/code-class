@@ -20,7 +20,7 @@ export default function App() {
         <Route path="/Register" element={<RegsiterPage />} />
         <Route path="/Login" element={<LoginPage/>} />
         <Route path="/Courses" element={<CoursePage />} />
-        <Route path="/javascript" element={<CourseDetails />} />
+        <Route path="/Courses/:courseId" element={<CourseDetails />} />
         <Route path="/Forgot-Password" element={<ForgottenPassword />} />
         <Route path="/payment-checkout" element={<PaymentCheckout/>} />
         <Route path="/payment-succesfull" element={<PaystackSuccesful/>} />
