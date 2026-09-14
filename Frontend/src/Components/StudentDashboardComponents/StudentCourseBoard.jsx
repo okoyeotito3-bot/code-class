@@ -1,6 +1,6 @@
-import { Check, Key, Lock } from "lucide-react";
+import { Check,Lock } from "lucide-react";
 import BoardHeader from "./studentDashBoardHeader";
-import userboard from "../../mockup";
+import {userboard} from "../../mockup";
 import Button from '../../Utilities/Button'
 export default function StudentCourseBoard({ className }) {
   const progress = "35";
