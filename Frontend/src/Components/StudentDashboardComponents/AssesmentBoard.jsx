@@ -51,7 +51,7 @@ export default function AssesmentBoard({ className }) {
           </div>
         </div>
         <div className="bg-[#161B26] flex flex-col gap-5 p-6 rounded-mds">
-          <p className='text-[#161B26] font-["Geist-Mono"] font-bold text-sm'>
+          <p className='text-white font-["Geist-Mono"] font-bold text-sm'>
             GRADING RUBRICS
           </p>
           {assesment.gradingRubrics.map((gr) => (
