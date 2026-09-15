@@ -48,7 +48,7 @@ export default function SideBarFrame({logOutOfDashaorad,closeSideBar,className})
           </div>
           <div className="flex gap-3 px-4 py-3 rounded-sm items-center cursor-pointer  w-full">
             <User className="text-[#2979FF]" size={20}/>
-            <p className="text-[#2979FF] font-['geist'] text-sm font-bold">Profile</p>
+            <Link to="/student-profile" className="text-[#2979FF] font-['geist'] text-sm font-bold">Profile</Link>
           </div>
         </div>
 
