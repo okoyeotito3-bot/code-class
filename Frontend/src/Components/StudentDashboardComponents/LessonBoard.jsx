@@ -52,9 +52,9 @@ export default function StudentLessonBoard({ className }) {
         <div className="flex flex-col gap-6">
           <div className="w-full">
             <video
-              src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+              src="codeclass.mp4"
               muted
-              controlsList="nodownload"
+             
               controls
               className="w-full rounded-md h-auto object-cover"
             ></video>
