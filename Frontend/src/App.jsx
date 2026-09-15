@@ -11,7 +11,7 @@ import PaymentFailUi from "./Pages/CheckOutPages/PaymentFail";
 import StudentDashboard from "./Pages/StudentDashboard/StudentDashboard";
 import StudentCourse from "./Pages/StudentDashboard/Student-MyCourse";
 import LessonBoard from "./Pages/StudentDashboard/StudentLesson";
-
+import Assesment from "./Pages/StudentDashboard/Student-Assesment";
 export default function App() {
   return (
     <>
@@ -27,7 +27,8 @@ export default function App() {
          <Route path="/payment-failed" element={<PaymentFailUi/>} />
          <Route path="/student-dashboard" element={<StudentDashboard/>} />
          <Route path="/student-course" element={<StudentCourse/>} />
-          <Route path="/student-lesson" element={<LessonBoard/>} />
+         <Route path="/student-lesson" element={<LessonBoard/>} />
+          <Route path="/student-assesment" element={<Assesment/>} />
       </Routes>
     </>
   );

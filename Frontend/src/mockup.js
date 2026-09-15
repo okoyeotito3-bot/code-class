@@ -31,7 +31,7 @@ class Course {
   }
 }
 
-export  const allCourses = [
+export  const allCourses = [ 
 
   // =========================
   // JAVASCRIPT
@@ -676,7 +676,8 @@ new Courseboard('Module 4: Build System Engineering','Webpack, Vite config, and 
 //student lesson board information
 
 class LessonBoard {
-  constructor(topic, explanation, example) {
+  constructor(id,topic, explanation, example) {
+    this.id=id;
     this.topic = topic;
     this.explanation = explanation;
     this.example = example;
@@ -686,6 +687,7 @@ class LessonBoard {
 
 export const userlessonBoard = [
   new LessonBoard(
+    1,
     'Variables & Types',
     'A variable is a named container used to store a value in a program.',
     `const name = "John";
@@ -694,6 +696,7 @@ const isDeveloper = true;`
   ),
 
   new LessonBoard(
+    2,
     'Functions & Scopes',
     'A function is a reusable block of code that performs a specific task. Scope determines where a variable can be accessed.',
     `function greet(name) {
@@ -705,10 +708,154 @@ console.log(message);`
   ),
 
   new LessonBoard(
+    3,
     'DOM Manipulation',
     'DOM manipulation means using JavaScript to access and change elements on a web page.',
     `const heading = document.querySelector("h1");
 
 heading.textContent = "Hello, Otikas!";`
   ),
+];
+
+//assessments dashboard
+class Assessment {
+  constructor(
+    id,
+    topic,
+    description,
+    submissionDeadline,
+    requirements,
+    gradingRubrics,
+    totalMarks,
+    duration,
+    status
+  ) {
+    this.id = id;
+    this.topic = topic;
+    this.description = description;
+    this.submissionDeadline = submissionDeadline;
+    this.requirements = requirements;
+    this.gradingRubrics = gradingRubrics;
+    this.totalMarks = totalMarks;
+    this.duration = duration;
+    this.status = status;
+  }
+}
+
+export const studentAssessment = [
+  new Assessment(
+    1,
+    'Variables & Types',
+    'Test your understanding of JavaScript variables, data types, and how values are stored and used in programs.',
+    '22/05/2027',
+
+    [
+      'Use let and const to declare variables.',
+      'Create variables for at least 5 different values.',
+      'Identify the data type of each value.',
+      'Use typeof to check variable types.',
+      'Use meaningful and descriptive variable names.',
+      'Submit your solution as a JavaScript file.'
+    ],
+
+    [
+      'Correctly declares variables using let and const.',
+      'Correctly identifies JavaScript data types.',
+      'Uses appropriate variable names.',
+      'Demonstrates correct use of typeof.',
+      'Uses the correct data type for each value.',
+      'Code is clean, readable, and properly formatted.'
+    ],
+
+    100,
+    '45 minutes',
+    'Upcoming'
+  ),
+
+  new Assessment(
+    2,
+    'Operators & Expressions',
+    'Evaluate your ability to use JavaScript operators and expressions to solve programming problems.',
+    '29/05/2027',
+
+    [
+      'Use arithmetic operators to perform calculations.',
+      'Use comparison operators to compare values.',
+      'Use logical operators to combine conditions.',
+      'Demonstrate the difference between == and ===.',
+      'Create expressions that produce the expected results.',
+      'Submit your solution as a JavaScript file.'
+    ],
+
+    [
+      'Correctly uses arithmetic operators.',
+      'Correctly applies comparison operators.',
+      'Correctly uses logical operators.',
+      'Demonstrates a clear understanding of == and ===.',
+      'Expressions produce the expected results.',
+      'Code is clean and easy to understand.'
+    ],
+
+    100,
+    '45 minutes',
+    'Upcoming'
+  ),
+
+  new Assessment(
+    3,
+    'Conditional Statements',
+    'Demonstrate your ability to control program flow using if, else if, else, and ternary operators.',
+    '05/06/2027',
+
+    [
+      'Create a program that uses an if statement.',
+      'Use else if to handle multiple conditions.',
+      'Use else to handle a default case.',
+      'Create at least one condition using logical operators.',
+      'Use a ternary operator for a simple condition.',
+      'Test your program with different values.'
+    ],
+
+    [
+      'Correctly uses if, else if, and else.',
+      'Creates logically correct conditions.',
+      'Handles different possible inputs.',
+      'Uses comparison and logical operators correctly.',
+      'Uses the ternary operator appropriately.',
+      'Code is readable and well structured.'
+    ],
+
+    100,
+    '50 minutes',
+    'Upcoming'
+  ),
+
+  new Assessment(
+    4,
+    'Functions',
+    'Assess your understanding of JavaScript functions, parameters, arguments, return values, and reusable logic.',
+    '12/06/2027',
+
+    [
+      'Create at least 3 JavaScript functions.',
+      'Use parameters in at least 2 functions.',
+      'Pass arguments when calling your functions.',
+      'Return values from your functions.',
+      'Create at least one arrow function.',
+      'Test each function with different inputs.'
+    ],
+
+    [
+      'Correctly declares and calls functions.',
+      'Uses parameters and arguments correctly.',
+      'Returns the expected values.',
+      'Creates reusable functions.',
+      'Uses arrow functions correctly.',
+      'Code is clean, readable, and logically structured.'
+    ],
+
+    100,
+    '60 minutes',
+    'Upcoming'
+  )
 ];

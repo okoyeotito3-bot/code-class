@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 export default function SideBarFrame({logOutOfDashaorad,closeSideBar,className}) {
   return (
    <section
-  className={`bg-[#161B26] flex-col px-6 py-8 transition-transform duration-500 md:flex lg:flex ${className}`}>
+  className={`bg-[#161B26] h-full flex-col px-6 py-8 transition-transform duration-500 md:flex lg:flex ${className}`}>
       <div className="flex flex-col gap-20">
       <div className="flex justify-between">
           <img src="brand.png" alt="brandlogo" />
@@ -40,7 +40,7 @@ export default function SideBarFrame({logOutOfDashaorad,closeSideBar,className})
           </div>
           <div className="flex gap-3 px-4 py-3 rounded-sm items-center cursor-pointer  w-full">
             <Terminal className="text-[#2979FF]" size={20}/>
-            <p className="text-[#2979FF] font-['geist'] text-sm font-bold">Assessments</p>
+            <Link to="/student-assesment" className="text-[#2979FF] font-['geist'] text-sm font-bold">Assessments</Link>
           </div>
           <div className="flex gap-3 px-4 py-3 rounded-sm items-center cursor-pointer  w-full">
             <Award className="text-[#2979FF]" size={20}/>

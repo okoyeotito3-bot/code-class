@@ -64,12 +64,12 @@ export default function NavBar() {
             <Button
               text="Login"
               to="/Login"
-              className="w-44.25 flex items-center justify-start py-3 px-6 font-['geist'] text-sm font-bold text-white cursor-pointer"
+              className="w-44.25 text-center py-3 px-6 font-['geist'] text-sm font-bold text-white rounded-md  cursor-pointer border-2"
             />
             <Button
               text="Start Learning"
               to="/Register"
-              className="w-44.25 flex items-center justify-center rounded-md py-3 px-6 font-bold bg-[#2979FF] text-white cursor-pointer hover:bg-[#1D64D8]"
+              className="w-44.25 text-center rounded-md py-3 px-6 font-bold bg-[#2979FF] text-white cursor-pointer hover:bg-[#1D64D8]"
             />
           </div>
         </div>

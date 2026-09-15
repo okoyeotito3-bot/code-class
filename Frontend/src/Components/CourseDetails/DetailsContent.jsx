@@ -1,42 +1,19 @@
 import { ChevronDown, CheckCircle, MinusCircle } from "lucide-react";
-import { supabase } from "../../supabase";
-import { useEffect, useState } from "react";
 import Button from "../../Utilities/Button";
 import {allCourses} from '../../mockup'
 import { useParams } from "react-router-dom";
 
 export default function DetailsContent() {
 
-  const [modules, setModules] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+ 
 
    const { courseId } = useParams();
    
-   const course = allCourses.filter(c => c.courseId === Number(courseId))
-   console.log(course)
+   const course = allCourses.find(c => c.courseId === Number(courseId))
 
-   
-  async function getModules() {
-    try {
-      const { data, error } = await supabase.from("modules").select("*");
 
-      if (error) {
-        throw error;
-      }
-      setModules(data);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  useEffect(() => {
-    getModules();
-  }, []);
-
-  const modulesData = course[0].moduleCurriculum.map((module) => {
+  
+  const modulesData = course.moduleCurriculum.map((module) => {
     return (
       <details key={module.id} className="group flex flex-col gap-2">
         <summary className="text-white font-geist text-sm font-bold list-none flex gap-4 items-center [&::-webkit-details-marker]:hidden cursor-pointer">
@@ -58,7 +35,7 @@ export default function DetailsContent() {
             COURSE OVERVIEW
           </span>
           <span className="text-[#94A3B8] font-geist text-sm">
-            {course[0].courseOverView}
+            {course.courseOverView}
           </span>
         </div>
 
@@ -68,7 +45,7 @@ export default function DetailsContent() {
           </p>
 
           <div className="flex flex-col gap-3">
-             {course[0].whatYouWillMaster.map(
+             {course.whatYouWillMaster.map(
               c =>{
                 return(
                   <div className="flex gap-3 items-center">
@@ -85,7 +62,7 @@ export default function DetailsContent() {
 
         <div className="flex flex-col gap-4">
           <p className="text-[#2979FF] font-bold text-sm font-[Geist-Mono]">
-            {course[0].moduleCurriculum.length}-MODULE CURRICULUM
+            {course.moduleCurriculum.length}-MODULE CURRICULUM
           </p>
           <div className="flex flex-col gap-2">{modulesData}</div>
         </div>
@@ -94,7 +71,7 @@ export default function DetailsContent() {
             Prerequisites
           </span>
           <span className="text-[#94A3B8] font-geist text-sm">
-           {course[0].prerequisites}
+           {course.prerequisites}
           </span>
         </div>
       </div>
@@ -106,11 +83,11 @@ export default function DetailsContent() {
               TUITION COST
             </span>
             <p className="text-[#00E676] font-[Geist-Mono]">
-              NGN:{course[0].price} /<span className="text-[#94A3B8]"> total</span>
+              NGN:{course.price} /<span className="text-[#94A3B8]"> total</span>
             </p>
           </div>
           <Button
-            text={`Enroll in (${course[0].course})`}
+            text={`Enroll in (${course.course})`}
             to="/Register"
             className="bg-[#2979FF] font-semibold text-sm text-center font-geist py-3.5 rounded-md text-white cursor-pointer"
           />
@@ -160,15 +137,15 @@ export default function DetailsContent() {
             />
             <div className="flex flex-col gap-1">
               <span className="text-white font-bold text-sm font-geist">
-               {course[0].instructorName}
+               {course.instructorName}
               </span>
               <span className="text-[#94A3B8] font-[Geist-Mono] text-sm">
-                  {course[0].instructorRole}
+                  {course.instructorRole}
               </span>
             </div>
           </div>
           <p className="text-[#94A3B8] font-geist text-sm">
-           {course[0].aboutInstructor}
+           {course.aboutInstructor}
           </p>
         </div>
       </div>
