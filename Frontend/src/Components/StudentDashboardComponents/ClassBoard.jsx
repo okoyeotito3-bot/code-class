@@ -34,8 +34,8 @@ export default function({className}){
           <section className="flex flex-col gap-8 md:flex-row lg:flex-row"> 
             <div className="flex flex-col gap-6 flex-2">
                 <div className="bg-[#161B26] flex flex-col gap-5 p-6">
-                    <div className='flex justify-between'>
-                            <span className="bg-[#FF4081]/10 px-2 py-1 rounded-[20px] text-[#FF4081] font-['Geist-Mono'] font-semibold text-sm">FEATURED LIVE SESSION</span>
+                    <div className='flex flex-col gap-1.5 md:flex-row lg:flex-row justify-between'>
+                        <span className="bg-[#FF4081]/10 px-2 py-1 rounded-[20px] text-[#FF4081] font-['Geist-Mono'] font-semibold text-sm text-center">FEATURED LIVE SESSION</span>
                         <span className="text-[#94A3B8] font-['geist'] text-sm">Starts in 2 days</span>
                     </div>
                     <div className="flex flex-col gap-2">
