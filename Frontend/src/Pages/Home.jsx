@@ -9,8 +9,20 @@ import WorkShowCase from '../Components/HomeComponents/WorkFlowShowcase'
 import Faq from '../Components/HomeComponents/FAQ'
 import FinalCta from '../Components/HomeComponents/Final-Cta'
 import Footer from '../Components/Footer'
-
+import { useEffect } from 'react'
 export default function Home(){
+
+    useEffect(()=>{
+ const hash =window.location.hash;
+
+ if(hash){
+    const element = document.querySelector(hash)
+    if(element){
+        element.scrollIntoView()
+    }
+ }
+
+    },[])
     return(
         <>
        <div className='bg-[#0B0F19] flex flex-col w-screen'>

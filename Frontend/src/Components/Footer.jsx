@@ -1,5 +1,5 @@
 import UnorderedList from "../Utilities/UnorderedList";
-
+import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <section className="w-full flex flex-col gap-2 p-6 md:gap-16 lg:gap-16 md:px-20 md:pb-12 lg:px-20 lg:pb-12">
@@ -16,14 +16,11 @@ export default function Footer() {
           <h6 className="text-white font-bold font-['Geist-Mono'] text-lg">
             Platform
           </h6>
-          <UnorderedList
-            list1="Courses"
-            to1="/Courses"
-            list2="Pricing"
-            to2="/Pricing"
-            list3="How It Works"
-            to3="/How It Works"
-          />
+          <nav className="flex flex-col">
+             <Link to="/Courses" className="font-['geist'] font-medium text-[#94A3B8]  cursor-pointer`">Courses</Link>
+              <a href="#Pricing" className="font-['geist'] font-medium text-[#94A3B8]  cursor-pointer`">Pricing</a>
+              <a href="#howItWorks" className="font-['geist'] font-medium text-[#94A3B8]  cursor-pointer`">How It Works</a>
+          </nav>
         </div>
 
         <div>

@@ -1,6 +1,6 @@
 export default function () {
   return (
-    <section className="bg-[#161B26] w-full flex flex-col py-3 px-2 gap-20 md:py-24 md:px-20 lg:py-24 lg:px-20">
+    <section id='howItWorks' className="bg-[#161B26] w-full flex flex-col py-3 px-2 gap-20 md:py-24 md:px-20 lg:py-24 lg:px-20">
       <header className="flex flex-col gap-4 items-center">
         <p className="font-['Geist-Mono'] font-semibold text-sm tracking-[0.5em] text-white">
           RoadMap
