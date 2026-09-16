@@ -36,7 +36,7 @@ export default function SideBarFrame({logOutOfDashaorad,closeSideBar,className})
           </div>
           <div className="flex gap-3 px-4 py-3 rounded-sm items-center cursor-pointer  w-full">
             <Video className="text-[#2979FF]" size={20}/>
-            <p className="text-[#2979FF] font-['geist'] text-sm font-bold">Classes</p>
+            <Link to='/student-classes' className="text-[#2979FF] font-['geist'] text-sm font-bold">Classes</Link>
           </div>
           <div className="flex gap-3 px-4 py-3 rounded-sm items-center cursor-pointer  w-full">
             <Terminal className="text-[#2979FF]" size={20}/>

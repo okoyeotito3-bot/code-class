@@ -14,6 +14,7 @@ import LessonBoard from "./Pages/StudentDashboard/StudentLesson";
 import Assesment from "./Pages/StudentDashboard/Student-Assesment";
 import Grades from "./Pages/StudentDashboard/Student-Grades";
 import Profile from "./Pages/StudentDashboard/Student-Profile";
+import Classes from "./Pages/StudentDashboard/Student-Class";
 export default function App() {
   return (
     <>
@@ -33,6 +34,7 @@ export default function App() {
          <Route path="/student-assesment" element={<Assesment/>} />
          <Route path="/student-grades" element={<Grades/>} />
           <Route path="/student-profile" element={<Profile/>} />
+            <Route path="/student-classes" element={<Classes/>} />
       </Routes>
     </>
   );
