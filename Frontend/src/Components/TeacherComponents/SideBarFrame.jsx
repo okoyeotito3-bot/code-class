@@ -13,7 +13,7 @@ export default function SideBar(){
                <Grid2X2 className="text-[#2979FF]"/>
                <span className="text-[#2979FF] font-['geist'] text-sm font-semibold">Overview</span>
             </Link>
-             <Link className="flex gap-3 px-4 py-3 bg-[#2979FF]/10 rounded-md cursor-pointer">
+             <Link to="/teacher-student" className="flex gap-3 px-4 py-3 bg-[#2979FF]/10 rounded-md cursor-pointer">
                <UserRound className="text-[#2979FF]"/>
                <span className="text-[#2979FF] font-['geist'] text-sm font-semibold">Students</span>
             </Link>

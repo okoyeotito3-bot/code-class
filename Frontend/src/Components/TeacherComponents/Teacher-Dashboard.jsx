@@ -14,7 +14,7 @@ export default function Dashboard(){
  const date = new Date;
  const todayDate= date.toDateString()
     return(
-        <section className="w-full flex flex-col gap-8 p-10 relative">
+        <section className="w-full flex flex-col gap-8 p-10">
             <Header text={`Welcome back, ${instructorData.instructorName}!`} subText={todayDate}/>
 
 

@@ -859,3 +859,135 @@ export const studentAssessment = [
     'Upcoming'
   )
 ];
+
+
+    class StudentDirectory {
+        constructor(image,name,email,rate,module,avgGrade,lastActive,assesmentScore,attendance) {
+            this.image=image;
+            this.name=name;
+            this.email=email;
+            this.rate=rate;
+            this.module=module;
+            this.avgGrade=avgGrade;
+            this.lastActive=lastActive;
+            this.assesmentScore=assesmentScore;
+            this.attendance=attendance;
+        }
+    }
+export const students=[
+    new StudentDirectory('test.jpg','alex wong','alex@gmail.com',56,3,92,'10:05 am',[
+       {
+         topic:'Dom',
+        score:77.
+       },
+       {
+         topic:'variable',
+        score:97.
+       },
+       {
+         topic:'String',
+        score:89.
+       }
+    ],8),
+    new StudentDirectory('test.jpg','John wong','john@gmail.com',46,2,55,'08:04 am',[
+      {
+         topic:'Dom',
+        score:44.
+       },
+       {
+         topic:'variable',
+        score:100.
+       },
+       {
+         topic:'String',
+        score:77.
+       }
+    ],7),
+    new StudentDirectory('test.jpg','alex Doe','doe@gmail.com',88,5,22,'11:05 am',[
+      {
+         topic:'Dom',
+        score:89.
+       },
+       {
+         topic:'variable',
+        score:12.
+       },
+       {
+         topic:'String',
+        score:99.
+       }
+    ],8),
+    new StudentDirectory('tutor.jpg','Mary Luka','mary@gmail.com',57,6,92,'15:05 pm',[
+      {
+         topic:'Dom',
+        score:85.
+       },
+       {
+         topic:'variable',
+        score:24.
+       },
+       {
+         topic:'String',
+        score:33.
+       }
+    ],4),
+    new StudentDirectory('test.jpg','David Mark','david@gmail.com',72,4,81,'09:15 am',[
+    { topic:'Dom', score:81 },
+    { topic:'variable', score:74 },
+    { topic:'String', score:88 }
+],7),
+
+new StudentDirectory('test.jpg','Sarah James','sarah@gmail.com',91,7,95,'07:42 am',[
+    { topic:'Dom', score:95 },
+    { topic:'variable', score:91 },
+    { topic:'String', score:94 }
+],8),
+
+new StudentDirectory('test.jpg','Michael Cole','michael@gmail.com',63,3,68,'12:20 pm',[
+    { topic:'Dom', score:65 },
+    { topic:'variable', score:72 },
+    { topic:'String', score:67 }
+],6),
+
+new StudentDirectory('test.jpg','Grace Peter','grace@gmail.com',84,5,87,'10:35 am',[
+    { topic:'Dom', score:86 },
+    { topic:'variable', score:83 },
+    { topic:'String', score:91 }
+],8),
+
+new StudentDirectory('test.jpg','Daniel Smith','daniel@gmail.com',48,2,59,'01:10 pm',[
+    { topic:'Dom', score:51 },
+    { topic:'variable', score:63 },
+    { topic:'String', score:54 }
+],5),
+
+new StudentDirectory('test.jpg','Emma Brown','emma@gmail.com',76,6,79,'08:50 am',[
+    { topic:'Dom', score:78 },
+    { topic:'variable', score:75 },
+    { topic:'String', score:84 }
+],7),
+
+new StudentDirectory('test.jpg','Chris Wilson','chris@gmail.com',39,1,45,'02:25 pm',[
+    { topic:'Dom', score:42 },
+    { topic:'variable', score:48 },
+    { topic:'String', score:44 }
+],4),
+
+new StudentDirectory('test.jpg','Linda James','linda@gmail.com',69,4,73,'11:45 am',[
+    { topic:'Dom', score:70 },
+    { topic:'variable', score:76 },
+    { topic:'String', score:69 }
+],6),
+
+new StudentDirectory('test.jpg','Brian Adams','brian@gmail.com',87,7,90,'09:05 am',[
+    { topic:'Dom', score:92 },
+    { topic:'variable', score:87 },
+    { topic:'String', score:91 }
+],8),
+
+new StudentDirectory('test.jpg','Rachel King','rachel@gmail.com',58,3,64,'03:15 pm',[
+    { topic:'Dom', score:61 },
+    { topic:'variable', score:66 },
+    { topic:'String', score:64 }
+],5),
+]

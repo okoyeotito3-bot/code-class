@@ -16,6 +16,7 @@ import Grades from "./Pages/StudentDashboard/Student-Grades";
 import Profile from "./Pages/StudentDashboard/Student-Profile";
 import Classes from "./Pages/StudentDashboard/Student-Class";
 import TeacherDashBoard from "./Pages/TeacherDashboard/Teacher-DashBoard";
+import TeacherStudent from "./Pages/TeacherDashboard/Teacher-students";
 export default function App() {
   return (
     <>
@@ -37,6 +38,7 @@ export default function App() {
           <Route path="/student-profile" element={<Profile/>} />
           <Route path="/student-classes" element={<Classes/>} />
           <Route path="/teacher-dashboard" element={<TeacherDashBoard/>} />
+           <Route path="/teacher-student" element={<TeacherStudent/>} />
       </Routes>
     </>
   );
