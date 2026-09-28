@@ -1,10 +1,10 @@
 export default function () {
   return (
-    <section className="w-full flex flex-col gap-16 p-4 md:flex-row md:py-30 md:px-20 lg:px-20 lg:py-30">
+    <section className="w-full flex flex-col gap-16 p-4 md:flex-row md:py-30 md:px-20">
       <img
         src="tutor.png.jpeg"
         alt="tutor"
-        className="w-full h-auto object-cover rounded-md shadow-sm 120 lg:h-120"
+        className="w-full h-auto object-cover rounded-md shadow-sm md:h-120"
       />
       <div className="flex flex-col w-full gap-8">
         <h1 className="font-['Geist-Mono'] font-semibold text-sm text-[#5491FF]">
@@ -35,7 +35,7 @@ export default function () {
               Active-Engineering
             </p>
             <p className="text-white font-bold font-['geist'] text-base">
-              Netflix, Meta
+              CodeClass Founder, Nexlins
             </p>
           </div>
           <div>

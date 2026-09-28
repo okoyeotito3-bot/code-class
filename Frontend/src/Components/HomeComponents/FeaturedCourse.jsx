@@ -6,7 +6,7 @@ export default function FeatureCourse() {
   const course = allCourses.find(c=>c.courseId===1)
   
   return (
-    <section className=" w-full flex flex-col gap-4 p-4 md:px-20 md:py-30 lg:py-30 lg:px-20 md:gap-16 lg:gap-16">
+    <section className=" w-full flex flex-col gap-4 p-4 md:px-20 md:py-30 md:gap-16">
       <header className="w-full flex flex-col gap-4">
         <p className="text-[#FF4081] text-center font-[Geist-Mono] font-semibold text-[11px]">
           PREMIUM COHORT
@@ -67,7 +67,23 @@ export default function FeatureCourse() {
           </div>
         </div>
 
-        <img src="course-syllabus.png" alt="course-syllabus"  className="h-auto object-cover m-auto rounded-md"/>
+        <div className="bg-[#1F2638] flex flex-col gap-6 p-12">
+          <p className="text-[#94A3B8] font-['geist-mono'] font-bold text-sm"> Curriculum Preview</p>
+         {
+          course.moduleCurriculum.filter(c => c.id < 4).map(c=>{
+            return(
+             <div key={c.id} className="flex gap-4">
+            <p className="bg-[#242E42] w-8 h-8 p-4 flex justify-center items-center rounded-xl text-[#00E5FF] font-bold font-['geist-mono'] text-sm">{c.id}</p>
+              <div className="flex flex-col gap-1">
+                <p className="text-white font-['geist'] text-sm font-bold">Module {c.id} :{c.title}</p>
+                <p className="text-[#94A3B8] font-['geist'] text-sm">{c.briefTiltle}</p>
+              </div>
+            </div>
+            )
+          })
+         }
+        </div>
+       
       </div>
     </section>
   );

@@ -11,7 +11,7 @@ export default function FinalCta() {
   }
 
   return (
-    <section className="w-full flex flex-col gap-4 items-center p-4 md:gap-10 lg:gap-10 md:px-20 md:py-30 lg:px-20 lg:py-30">
+    <section className="w-full flex flex-col gap-4 items-center p-4 md:gap-10 md:px-20 md:py-30">
       <header className="w-full gap-4 flex flex-col items-center">
         <p className="text-[#FF4081] font-semibold font-['Geist-Mono'] text-sm">
           GET STARTED TODAY
@@ -26,18 +26,18 @@ export default function FinalCta() {
       </header>
       <form
         action={handleCtaEmail}
-        className="w-full flex justify-center"
+        className="w-full flex items-center"
       >
         <Input
           type="email"
           name="finalCtaEmailInput"
           placeholder="💬 bob@gmail.com..."
-          className="bg-[#64748B] p-2"
+          className="bg-[#64748B] p-2 flex-2"
         />
 
         <Button
           text="Get Started"
-          className="bg-[#2979FF] p-2 text-white hover:bg-[#1D64D8] cursor-pointer"
+          className="bg-[#2979FF] p-2 text-white hover:bg-[#1D64D8] cursor-pointer flex-1"
         />
       </form>
     </section>

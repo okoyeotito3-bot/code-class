@@ -44,6 +44,7 @@ export default function Footer() {
           <UnorderedList list1="Privacy" list2="Terms" />
         </div>
       </header>
+       <hr className="border-gray-700"/>
 
       <h6 className="text-[#64748B] font-['geist'] text-sm">
         © 2026 CodeClass, Inc. All rights reserved.
