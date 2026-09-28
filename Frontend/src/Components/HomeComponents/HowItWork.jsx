@@ -5,11 +5,11 @@ export default function () {
         <p className="font-['Geist-Mono'] font-semibold text-sm tracking-[0.5em] text-white">
           RoadMap
         </p>
-        <p className="font-['geist'] font-extrabold text-2xl md:text-4xl lg:text-4xl text-white">
+        <p className="font-['geist'] font-extrabold text-2xl md:text-4xl  text-white">
           How CodeClass Works
         </p>
       </header>
-      <div className=" w-full grid grid-cols-2 px-2 md:grid-cols-4 lg:grid-cols-4">
+      <div className=" w-full grid px-2 md:grid-cols-4">
         <img
           src="step-wrapper.png"
           alt="stepperRow"

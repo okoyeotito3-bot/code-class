@@ -18,6 +18,7 @@ import Classes from "./Pages/StudentDashboard/Student-Class";
 import TeacherDashBoard from "./Pages/TeacherDashboard/Teacher-DashBoard";
 import TeacherStudent from "./Pages/TeacherDashboard/Teacher-students";
 import TeacherClasses from "./Pages/TeacherDashboard/Teacher-Classes";
+import TeacherAssesmentBoard from "./Pages/TeacherDashboard/TeacherAssesmentBoard";
 export default function App() {
   return (
     <>
@@ -41,6 +42,7 @@ export default function App() {
           <Route path="/teacher-dashboard" element={<TeacherDashBoard/>} />
           <Route path="/teacher-student" element={<TeacherStudent/>} />
           <Route path="/teacher-classes" element={<TeacherClasses/>} />
+           <Route path="/teacher-assesment" element={<TeacherAssesmentBoard/>} />
       </Routes>
     </>
   );

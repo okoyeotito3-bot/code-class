@@ -1,26 +1,48 @@
 import Header from "./Header";
 import { javascriptTopics } from "../../mockup";
-import { useState } from "react";
+import { CalendarX2 } from "lucide-react";
+import { useState} from "react";
 export default function TeacherClassBoard() {
-  const [nextClass, setNexClass] = useState(null);
+  const [nextClass, setNextClass] = useState(null);
+  const [editDescription, setEditDescription] = useState(false);
+
   function handleNextClass(FormData) {
-   if(FormData.get("nextTopic")===''||
-    FormData.get("nextClassDate")===''||
-     FormData.get("nextClassTime")===''||
-     FormData.get("nextClassDescription")===''
-){
-  alert('please fill all field')
-  return
-   }
-    setNexClass({
+    if (
+      FormData.get("nextTopic") === "" ||
+      FormData.get("nextClassDate") === "" ||
+      FormData.get("nextClassTime") === "" ||
+      FormData.get("nextClassDescription") === ""
+    ) {
+      alert("please fill all field");
+      return;
+    }
+     const newClass = {
       topic: FormData.get("nextTopic"),
-      classDate:FormData.get("nextClassDate"),
+      classDate: FormData.get("nextClassDate"),
       time: FormData.get("nextClassTime"),
       link: FormData.get("goggleMeetLink"),
       description: FormData.get("nextClassDescription"),
-    });
+    };
+
+    setNextClass(newClass)
+  
+    
+   
   }
 
+  function handleUpdateDescription(FormData) {
+
+    
+    setNextClass((prev) => ({
+      ...prev,
+      description: FormData.get("updatedDescription"),
+    }));
+
+  
+    setEditDescription(false);
+  }
+
+ 
   return (
     <section className="flex flex-col gap-8 p-10 w-full">
       <Header
@@ -30,7 +52,7 @@ export default function TeacherClassBoard() {
       <section className="flex flex-col gap-6 md:flex-row">
         <form
           action={handleNextClass}
-          className="flex flex-col gap-5 p-6 bg-[#161B26] rounded-md"
+          className="flex flex-col gap-5 p-6 bg-[#161B26] rounded-md flex-1"
         >
           <p className="text-white font-['geist'] text-base font-bold">
             Schedule New Class Session
@@ -91,7 +113,7 @@ export default function TeacherClassBoard() {
               CLASS DESCRIPTION
             </p>
             <textarea
-              name="nextClassDescription "
+              name="nextClassDescription"
               id=""
               className="text-[#94A3B8] font-['geist'] text-sm w-full bg-[#0B0F19] p-3 rounded-sm"
             ></textarea>
@@ -101,34 +123,66 @@ export default function TeacherClassBoard() {
           </div>
         </form>
 
-        <div className="flex flex-col gap-6">
-          {nextClass !== null && (
-            <div className="flex flex-col gap-5 p-6 bg-[#161B26] rounded-md">
-              <p className="text-white text-base font-['geist']">
-                Upcoming Live Sessions ({nextClass.classDate})
+        <div className="flex flex-col gap-6 flex-2">
+          {nextClass === null ? (
+            <div className="flex flex-col items-center justify-center gap-3 p-10 bg-[#161B26] rounded-md text-center">
+              <CalendarX2 color="#64748B" size={32} />
+              <p className="text-[#F8FAFC] font-['geist'] font-semibold text-sm">
+                No upcoming class scheduled
               </p>
-              <div className="flex flex-col md:flex-row items-center gap-4 justify-between p-4 bg-[#21293d]">
-                <p className="bg-[#FF4081]/10 w-9 h-9 p-2  rounded-full text-[#FF4081] font-['geist-mono'] font-bold">
-                  15
-                </p>
-
-                <p className="text-base font-['geist'] font-bold text-white">
-                  {nextClass.topic}
-                </p>
-                <a
-                  target="_blank"
-                  href={nextClass.link}
-                  className="w-full text-[#2979FF] text-center cursor-pointer border  font-['geist'] font-semibold px-3 py-1.5 rounded-md whitespace-nowrap"
-                >
-                  Join Class
-                </a>
-
-                <button className="w-full text-[#FF4081]  cursor-pointer border  font-['geist'] font-semibold px-3 py-1.5 rounded-md">
-                  Cancel Class
-                </button>
-               
-              </div>
+              <p className="text-[#94A3B8] font-['geist'] text-xs">
+                Fill out the form to book your next live lecture session.
+              </p>
             </div>
+          ) : (
+            <>
+              <div className="flex flex-col gap-5 p-6 bg-[#161B26] rounded-md">
+                <p className="text-white text-base font-['geist']">
+                  Upcoming Live Sessions ({nextClass.classDate})
+                </p>
+                <div className="flex flex-col md:flex-row items-center gap-4 justify-between p-4 bg-[#21293d]">
+                  <p className="bg-[#FF4081]/10 w-9 h-9 p-2  rounded-full text-[#FF4081] font-['geist-mono'] font-bold">
+                    15
+                  </p>
+
+                  <p className="text-base font-['geist'] font-bold text-white">
+                    {nextClass.topic}
+                  </p>
+                  <a
+                    target="_blank"
+                    href={nextClass.link}
+                    className="w-full text-[#2979FF] text-center cursor-pointer border  font-['geist'] font-semibold px-3 py-1.5 rounded-md whitespace-nowrap"
+                  >
+                    Join Class
+                  </a>
+
+                  <button className="w-full text-[#FF4081]  cursor-pointer border  font-['geist'] font-semibold px-3 py-1.5 rounded-md">
+                    Cancel Class
+                  </button>
+                </div>
+              </div>
+              <form
+                action={handleUpdateDescription}
+                className="w-full flex flex-col gap-5 p-6 rounded-md bg-[#161B26]"
+              >
+                <h5 className="text-base font-['geist'] text-white text-center">
+                  Class Description
+                </h5>
+                <textarea
+                  className={`text-white p-6 rounded-md  outline-0 ${editDescription && "border"}`}
+                  name="updatedDescription"
+                  defaultValue={nextClass.description}
+                  readOnly={!editDescription}
+                  onDoubleClick={()=> setEditDescription(true)}
+                ></textarea>
+                 {
+                  editDescription && ( <button 
+                    className="w-full text-[#2979FF] text-center cursor-pointer border font-['geist'] font-semibold px-3 py-1.5 rounded-md whitespace-nowrap">
+                      Save Changes
+                    </button>)
+                 }
+              </form>
+            </>
           )}
         </div>
       </section>
