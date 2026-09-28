@@ -19,30 +19,32 @@ import TeacherDashBoard from "./Pages/TeacherDashboard/Teacher-DashBoard";
 import TeacherStudent from "./Pages/TeacherDashboard/Teacher-students";
 import TeacherClasses from "./Pages/TeacherDashboard/Teacher-Classes";
 import TeacherAssesmentBoard from "./Pages/TeacherDashboard/TeacherAssesmentBoard";
+import TeacherSubmissionBoard from "./Pages/TeacherDashboard/TeacherSubmissionBoard";
 export default function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home />} />
         <Route path="/Register" element={<RegsiterPage />} />
-        <Route path="/Login" element={<LoginPage/>} />
+        <Route path="/Login" element={<LoginPage />} />
         <Route path="/Courses" element={<CoursePage />} />
         <Route path="/Courses/:courseId" element={<CourseDetails />} />
         <Route path="/Forgot-Password" element={<ForgottenPassword />} />
-        <Route path="/payment-checkout" element={<PaymentCheckout/>} />
-         <Route path="/payment-succesfull" element={<PaystackSuccesful/>} />
-         <Route path="/payment-failed" element={<PaymentFailUi/>} />
-         <Route path="/student-dashboard" element={<StudentDashboard/>} />
-         <Route path="/student-course" element={<StudentCourse/>} />
-         <Route path="/student-lesson" element={<LessonBoard/>} />
-         <Route path="/student-assesment" element={<Assesment/>} />
-         <Route path="/student-grades" element={<Grades/>} />
-          <Route path="/student-profile" element={<Profile/>} />
-          <Route path="/student-classes" element={<Classes/>} />
-          <Route path="/teacher-dashboard" element={<TeacherDashBoard/>} />
-          <Route path="/teacher-student" element={<TeacherStudent/>} />
-          <Route path="/teacher-classes" element={<TeacherClasses/>} />
-           <Route path="/teacher-assesment" element={<TeacherAssesmentBoard/>} />
+        <Route path="/payment-checkout" element={<PaymentCheckout />} />
+        <Route path="/payment-succesfull" element={<PaystackSuccesful />} />
+        <Route path="/payment-failed" element={<PaymentFailUi />} />
+        <Route path="/student-dashboard" element={<StudentDashboard />} />
+        <Route path="/student-course" element={<StudentCourse />} />
+        <Route path="/student-lesson" element={<LessonBoard />} />
+        <Route path="/student-assesment" element={<Assesment />} />
+        <Route path="/student-grades" element={<Grades />} />
+        <Route path="/student-profile" element={<Profile />} />
+        <Route path="/student-classes" element={<Classes />} />
+        <Route path="/teacher-dashboard" element={<TeacherDashBoard />} />
+        <Route path="/teacher-student" element={<TeacherStudent />} />
+        <Route path="/teacher-classes" element={<TeacherClasses />} />
+        <Route path="/teacher-assesment" element={<TeacherAssesmentBoard />} />
+        <Route path="/teacher-submisson" element={<TeacherSubmissionBoard />} />
       </Routes>
     </>
   );
