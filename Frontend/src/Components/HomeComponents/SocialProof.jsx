@@ -1,6 +1,6 @@
 export default function SocialProof() {
   return (
-    <div className="w-full bg-[#242E42] flex justify-between mt-4 p-4 md:px-20 md:py-10">
+    <div className="w-full bg-[#242E42] grid grid-cols-2 gap-3 p-4 mt-4  md:grid-cols-4 md:px-20 md:py-10">
       {
         [
           { value: "2,500+", label: "Active Students" },
@@ -10,7 +10,7 @@ export default function SocialProof() {
         ].map(socialProof =>{
           return(
             <div className="flex gap-1 flex-col items-center">
-              <span className="text-[#5491FF] font-[Geist-Mono] font-bold text-md">{socialProof.value}</span>
+              <span className="text-[#5491FF] font-[Geist-Mono] font-bold text-[22px]">{socialProof.value}</span>
               <span className="font-['geist'] text-[#94A3B8] font-md text-sm">{socialProof.label}</span>
             </div>
           )

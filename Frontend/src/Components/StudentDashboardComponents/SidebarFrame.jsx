@@ -7,56 +7,41 @@ import {
   Terminal,
   User,
   Video,
-  X,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 
-export default function SideBarFrame({logOutOfDashaorad,closeSideBar,className}) {
+export default function SideBarFrame() {
   return (
-   <section
-  className={`bg-[#161B26] h-full flex-col px-6 py-8 transition-transform duration-500 md:flex lg:flex ${className}`}>
-      <div className="flex flex-col gap-20">
-      <div className="flex justify-between">
-          <img src="brand.png" alt="brandlogo" />
-          <X className="text-[#2979FF] cursor-pointer md:hidden lg:hidden" size={20} onClick={closeSideBar}/>
-      </div>
-        <div className="flex flex-col gap-2 items-start">
-          <div className="flex gap-3 px-4 py-3 rounded-sm items-center cursor-pointer  w-full">
-            <Grid  className="text-[#2979FF]" size={20}/>
-            <Link to='/student-dashboard' className="text-[#2979FF] font-['geist'] text-sm font-bold">DashBoard</Link>
-          </div>
-          <div className="flex gap-3 px-4 py-3 rounded-sm items-center cursor-pointer  w-full">
-            <Book className="text-[#2979FF]" size={20}/>
-            <Link to='/student-course' className="text-[#2979FF] font-['geist'] text-sm font-bold">My Course</Link>
-          </div>
-          <div className="flex gap-3 px-4 py-3 rounded-sm items-center cursor-pointer  w-full">
-            <File className="text-[#2979FF]" size={20}/>
-            <Link to="/student-lesson"  className="text-[#2979FF] font-['geist'] text-sm font-bold">Lessons</Link>
-          </div>
-          <div className="flex gap-3 px-4 py-3 rounded-sm items-center cursor-pointer  w-full">
-            <Video className="text-[#2979FF]" size={20}/>
-            <Link to='/student-classes' className="text-[#2979FF] font-['geist'] text-sm font-bold">Classes</Link>
-          </div>
-          <div className="flex gap-3 px-4 py-3 rounded-sm items-center cursor-pointer  w-full">
-            <Terminal className="text-[#2979FF]" size={20}/>
-            <Link to="/student-assesment" className="text-[#2979FF] font-['geist'] text-sm font-bold">Assessments</Link>
-          </div>
-          <div className="flex gap-3 px-4 py-3 rounded-sm items-center cursor-pointer  w-full">
-            <Award className="text-[#2979FF]" size={20}/>
-            <Link to="/student-grades" className="text-[#2979FF] font-['geist'] text-sm font-bold">Grade</Link>
-          </div>
-          <div className="flex gap-3 px-4 py-3 rounded-sm items-center cursor-pointer  w-full">
-            <User className="text-[#2979FF]" size={20}/>
-            <Link to="/student-profile" className="text-[#2979FF] font-['geist'] text-sm font-bold">Profile</Link>
-          </div>
+   <section className='bg-[#161B26] h-full hidden flex-col justify-between px-6 py-8 md:flex'>
+     <div className="flex flex-col gap-10 w-full items-start  ">
+       <img src="brand.png" alt="brandlogo"/>
+          <div className="flex flex-col gap-2">
+             {[
+            {icon:Grid,content:'DashBoard'},
+            {icon:Book,content:'My Course'},
+            {icon:File,content:'Lessons'},
+            {icon:Video,content:'Classes'},
+            {icon:Terminal,content:'Assessments'},
+            {icon:Award,content:'Grades'},
+            {icon: User,content:'Profile'},
+          ].map((item,index)=> (<div key={index} className="flex gap-3 px-4 py-3 rounded-sm items-center cursor-pointer">
+                                  <item.icon className='text-[#2979FF]' size={20}/>
+                                   <Link to={`/${item.content.toLowerCase().replace(' ', '-')}`} className="text-[#2979FF] font-['geist'] text-sm font-bold">{item.content}</Link>
+                                  </div>))
+          
+          
+          }
         </div>
-
-       <div className="flex gap-4 cursor-pointer w-full items-center" onClick={logOutOfDashaorad}>
+     </div>
+          
+         
+       <button className="flex gap-4 cursor-pointer w-full items-center mt-auto">
          <LogOut className="text-red-200" size={20}/>
-        <p className="text-[#64748B] font-['geist'] text-sm">Log-Out</p>
-       </div>
-      </div>
+        <span className="text-[#64748B] font-['geist'] text-sm">Log-Out</span>
+       </button>
+
+      
     </section>
   );
 }

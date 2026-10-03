@@ -16,6 +16,7 @@ export default function StudentBord({ className }) {
   const nextTopic = "DOM Manipulation Deep Dive";
   const nextTopicDate = "Wed, Jan 15 at 7:00 PM EST ";
   async function getUserData() {
+
     const { data, error } = await supabase.auth.getUser();
 
     console.log(data.user.user_metadata.full_name);
@@ -30,13 +31,13 @@ export default function StudentBord({ className }) {
   }, []);
 
   return (
-    <section className={`flex-col p-2 w-full gap-8 ${className}`}>
+    <section className='flex flex-col flex-1 min-w-0 h-full overflow-y-auto gap-8 p-2 pb-24 md:pb-2'>
        <BoardHeader
            text= {`Welcome back,${ userName || 'user'} `}
            subtext={todayDate}
            />
 
-      <section className="flex flex-col gap-6 md:flex-row lg:flex-row">
+      <section className="flex flex-col gap-6 md:flex-row ">
         <div className="w-full flex flex-col p-6 gap-5 bg-[#161B26] rounded-md">
           <div className="flex items-center justify-between">
             <p className="text-white font-bold font-['geist'] text-lg">
