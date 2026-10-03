@@ -1,29 +1,27 @@
 import { Check,Lock } from "lucide-react";
-import BoardHeader from "./studentDashBoardHeader";
+import BoardHeader from "./Header";
 import {userboard} from "../../mockup";
-import Button from '../../Utilities/Button'
-export default function StudentCourseBoard({ className }) {
+
+export default function CoursePannel
+() {
   const progress = "35";
 
   return (
-    <section className={`flex-col p-2 w-full gap-8 ${className}`}>
-      <BoardHeader
-        text="My Enrolled Course"
-        subtext="Track your curriculum progress and syllabus roadmaps."
-      />
-      <section className="flex flex-col md:flex-row lg:flex-row gap-8 w-full">
+    <section className='flex flex-col flex-1 min-w-0 h-full overflow-y-auto gap-8 p-2 pb-24 md:pb-2 scrollbar-thin scrollbar-thumb-[#1F2638] scrollbar-track-[#0B0F19] scrollbar-thumb-rounded-md scrollbar-track-rounded-md'>
+      <BoardHeader  text="My Enrolled Course" subtext="Track your curriculum progress and syllabus roadmaps." />
+       <section className="flex flex-col md:flex-row gap-8">
         <div className="flex flex-col gap-6 w-full">
-          <div className="flex flex-col items-start md:flex-row lg:flex-row gap-6 p-8 md:items-center lg:items-center">
-            <div
-              className="flex justify-center items-center h-20 w-20 rounded-[50%]"
-              style={{
-                background: `conic-gradient(#2979FF 0% ${progress}%, #242E42 ${progress}% 100%)`,
-              }}
-            >
-              <div className="bg-[#242E42] w-18 h-18 rounded-full flex justify-center items-center text-sm font-['Geist-Mono'] font-bold">
+          <div className="flex flex-col items-start md:flex-row gap-6 p-8 md:items-center bg-[#161B26] rounded-md">
+            <div className="flex justify-center items-center h-20 w-20 rounded-[50%]"
+                  style={{background: `conic-gradient(#2979FF 0% ${progress}%, #242E42 ${progress}% 100%)`,}} >
+               <div className="bg-[#242E42] w-18 h-18 rounded-full flex justify-center items-center text-sm font-['Geist-Mono'] font-bold"> 
                 {progress}%
               </div>
-            </div>
+             </div>
+              
+                
+              
+            
             <div className="flex flex-col gap-2">
               <div className="flex gap-2 items-center">
                 <span className="text-[#FFD600] font-['Geist-Mono'] font-semibold text-sm">
@@ -102,10 +100,9 @@ export default function StudentCourseBoard({ className }) {
             "Always focus on computational thinking over memorizing APIs. 
             Master how the asynchronous event loop manages tasks."
           </span>
-          <Button
-          text='Ask a Question'
-          className='bg-[#2979FF] px-4 py-3 text-center rounded-md cursor-pointer text-white font-bold font-["geist"] text-sm'
-          />
+          <button className="bg-[#2979FF] text-white font-bold font-['geist'] text-sm py-3 px-4 rounded-md cursor-pointer">
+            Ask a Question
+          </button>
         </div>
       </section>
     </section>

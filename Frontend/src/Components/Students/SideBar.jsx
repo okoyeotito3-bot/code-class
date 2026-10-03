@@ -11,7 +11,7 @@ import {
 import { Link } from "react-router-dom";
 
 
-export default function SideBarFrame() {
+export default function SideBar() {
   return (
    <section className='bg-[#161B26] h-full hidden flex-col justify-between px-6 py-8 md:flex'>
      <div className="flex flex-col gap-10 w-full items-start  ">

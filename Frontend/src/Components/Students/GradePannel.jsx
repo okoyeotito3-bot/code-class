@@ -1,11 +1,11 @@
-import BoardHeader from "./studentDashBoardHeader"
+import Header from "./Header";
 export default function GradeBoard({className}){
     return(
-        <section className={`w-full flex flex-col gap-8 p-10  ${className}`}>
-          <BoardHeader
-           text='Grades & Feedback Hub'
-           subtext='Review performance scores and detailed software engineer critiques.'
-          />
+        <section className='flex flex-col flex-1 min-w-0 h-full p-4 gap-6 overflow-y-auto overflow-x-hidden pb-24 scrollbar-thin scrollbar-thumb-[#1F2638] scrollbar-track-[#0B0F19] scrollbar-thumb-rounded-md scrollbar-track-rounded-md'>
+          <Header text='Grades & Feedback Hub' subtext='Review performance scores and detailed software engineer critiques.' />
+           
+           
+          
           <section className="flex flex-col md:flex-row lg:flex-row gap-8">
             <div className="flex flex-col gap-6 w-full flex-2">
              <div className="bg-[#161B26] flex gap-4 p-6 rounded-md justify-between">

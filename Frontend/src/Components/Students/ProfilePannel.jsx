@@ -1,9 +1,9 @@
 import { UserRound, ToggleLeft, ToggleRight } from "lucide-react";
-import BoardHeader from "./studentDashBoardHeader";
+import BoardHeader from "./Header";
 import { useState } from 'react';
 
 
-export default function ProfileBoard({ className }) {
+export default function ProfilePannel() {
     const [notifications, setNotifications] = useState( [
         {id:1,on:false, message:'Weekly Class reminders'},
         {id:2,on:false,message:'Direct grading alerts'},
@@ -17,7 +17,7 @@ export default function ProfileBoard({ className }) {
 
  }
   return (
-    <section className={`flex flex-col w-full gap-8 p-10  ${className}`}>
+    <section className='flex flex-col flex-1 min-w-0 h-full overflow-y-auto gap-8 p-2 pb-24 md:pb-2 scrollbar-thin scrollbar-thumb-[#1F2638] scrollbar-track-[#0B0F19] scrollbar-thumb-rounded-md scrollbar-track-rounded-md'>
       <BoardHeader
         text="Account Settings"
         subtext="Configure personal metrics, notifications, and profile details."

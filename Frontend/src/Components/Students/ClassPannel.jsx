@@ -1,6 +1,7 @@
-import BoardHeader from "./studentDashBoardHeader"
-export default function({className}){
-    const upcoming=[
+import Header from "./Header"
+export default function ClassPannel()  {
+
+     const upcoming=[
         {
             class:'Asynchronous JS: Event Loop & Queue microtasks',
             tutor:'Otito Okoye • Jan 15, 2026'
@@ -29,12 +30,12 @@ export default function({className}){
         },
     ]
     return(
-        <section className={`w-full flex-col p-10 gap-8   ${className}`}>
-          <BoardHeader text='Live Classes' subtext='Join cohort lectures, ask questions live, and watch recordings.'/>
-          <section className="flex flex-col gap-8 md:flex-row lg:flex-row"> 
+        <section className='flex flex-col flex-1 min-w-0 h-full overflow-y-auto gap-8 p-2 pb-24 md:pb-2 scrollbar-thin scrollbar-thumb-[#1F2638] scrollbar-track-[#0B0F19] scrollbar-thumb-rounded-md scrollbar-track-rounded-md'>
+          <Header text='Live Classes' subtext='Join cohort lectures, ask questions live, and watch recordings.'/>
+          <section className="flex flex-col gap-8 md:flex-row "> 
             <div className="flex flex-col gap-6 flex-2">
                 <div className="bg-[#161B26] flex flex-col gap-5 p-6">
-                    <div className='flex flex-col gap-1.5 md:flex-row lg:flex-row justify-between'>
+                    <div className='flex flex-col gap-1.5 md:flex-row  justify-between'>
                         <span className="bg-[#FF4081]/10 px-2 py-1 rounded-[20px] text-[#FF4081] font-['Geist-Mono'] font-semibold text-sm text-center">FEATURED LIVE SESSION</span>
                         <span className="text-[#94A3B8] font-['geist'] text-sm">Starts in 2 days</span>
                     </div>
@@ -47,7 +48,7 @@ export default function({className}){
                     <p className="text-[#94A3B8] font-['geist'] text-sm">UPCOMING & RECENT SESSIONS</p>
                       {upcoming.map(cl=>{
                         return(
-                            <div key={cl.class} className="bg-[#161B26] flex flex-col justify-between md:flex-row lg:flex-row p-5 gap-6 rounded-md">
+                            <div key={cl.class} className="bg-[#161B26] flex flex-col justify-between md:flex-row  p-5 gap-6 rounded-md">
                               <div className="flex flex-col gap-1.5">
                                 <span className="text-white font-['geist'] font-bold text-sm">{cl.class}</span>
                                 <span className="text-[#94A3B8] font-['geist'] text-sm">{cl.tutor}</span>

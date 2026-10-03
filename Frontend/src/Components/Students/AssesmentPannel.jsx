@@ -1,12 +1,12 @@
-import BoardHeader from "./studentDashBoardHeader";
+import Header from "./Header";
 import { studentAssessment } from "../../mockup";
 import { AlertTriangle, Check } from "lucide-react";
-export default function AssesmentBoard({ className }) {
+export default function AssesmentPannel() {
   const assesment = studentAssessment.find((as) => as.id === 1);
 
   return (
-    <section className={`h-full flex-col p-10 gap-8 w-full ${className}`}>
-      <BoardHeader
+    <section className='flex flex-col flex-1 min-w-0 h-full gap-8 p-4 pb-20 overflow-y-auto md:pb-2'>
+      <Header
         text={`Assessment ${assesment.id}: ${assesment.topic}`}
         subtext={`Module ${assesment.id} Live Practice Assignment`}
       />

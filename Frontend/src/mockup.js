@@ -1,4 +1,478 @@
 //Courses
+
+
+
+//student course board information
+class Courseboard {
+    constructor(topic,subtopic,inProgress,isLocked) {
+        this.topic =topic,
+        this.subtopic=subtopic,
+         this.inProgress=inProgress,
+          this.isLocked=isLocked
+    }
+}
+export const userboard =[
+new Courseboard('Module 1: JavaScript Engine Basics','Scopes, hoisting, Closures, & memory management.',false,false),
+new Courseboard('Module 2: Asynchronous Operations','Promises, async/await, and event-loop microtasks.',false,false),
+new Courseboard('Module 3: Advanced DOM Manipulation','Virtual Dom fundamentals, event delegation and optimization.',true,false),
+new Courseboard('Module 4: Build System Engineering','Webpack, Vite config, and CodePen pipeline integration.',false,true),
+]
+
+
+//student lesson board information
+
+class LessonBoard {
+  constructor(id,topic, explanation, example) {
+    this.id=id;
+    this.topic = topic;
+    this.explanation = explanation;
+    this.example = example;
+  }
+}
+
+
+export const userlessonBoard = [
+  new LessonBoard(
+    1,
+    'Variables & Types',
+    'A variable is a named container used to store a value in a program.',
+    `const name = "John";
+const age = 22;
+const isDeveloper = true;`
+  ),
+
+  new LessonBoard(
+    2,
+    'Functions & Scopes',
+    'A function is a reusable block of code that performs a specific task. Scope determines where a variable can be accessed.',
+    `function greet(name) {
+  return "Hello " + name;
+}
+
+const message = greet("Otikas");
+console.log(message);`
+  ),
+
+  new LessonBoard(
+    3,
+    'DOM Manipulation',
+    'DOM manipulation means using JavaScript to access and change elements on a web page.',
+    `const heading = document.querySelector("h1");
+
+heading.textContent = "Hello, Otikas!";`
+  ),
+];
+
+//assessments dashboard
+class Assessment {
+  constructor(
+    id,
+    topic,
+    description,
+    submissionDeadline,
+    requirements,
+    gradingRubrics,
+    totalMarks,
+    duration,
+    status
+  ) {
+    this.id = id;
+    this.topic = topic;
+    this.description = description;
+    this.submissionDeadline = submissionDeadline;
+    this.requirements = requirements;
+    this.gradingRubrics = gradingRubrics;
+    this.totalMarks = totalMarks;
+    this.duration = duration;
+    this.status = status;
+  }
+}
+
+export const studentAssessment = [
+  new Assessment(
+    1,
+    'Variables & Types',
+    'Test your understanding of JavaScript variables, data types, and how values are stored and used in programs.',
+    '22/05/2027',
+
+    [
+      'Use let and const to declare variables.',
+      'Create variables for at least 5 different values.',
+      'Identify the data type of each value.',
+      'Use typeof to check variable types.',
+      'Use meaningful and descriptive variable names.',
+      'Submit your solution as a JavaScript file.'
+    ],
+
+    [
+      'Correctly declares variables using let and const.',
+      'Correctly identifies JavaScript data types.',
+      'Uses appropriate variable names.',
+      'Demonstrates correct use of typeof.',
+      'Uses the correct data type for each value.',
+      'Code is clean, readable, and properly formatted.'
+    ],
+
+    100,
+    '45 minutes',
+    'Upcoming'
+  ),
+
+  new Assessment(
+    2,
+    'Operators & Expressions',
+    'Evaluate your ability to use JavaScript operators and expressions to solve programming problems.',
+    '29/05/2027',
+
+    [
+      'Use arithmetic operators to perform calculations.',
+      'Use comparison operators to compare values.',
+      'Use logical operators to combine conditions.',
+      'Demonstrate the difference between == and ===.',
+      'Create expressions that produce the expected results.',
+      'Submit your solution as a JavaScript file.'
+    ],
+
+    [
+      'Correctly uses arithmetic operators.',
+      'Correctly applies comparison operators.',
+      'Correctly uses logical operators.',
+      'Demonstrates a clear understanding of == and ===.',
+      'Expressions produce the expected results.',
+      'Code is clean and easy to understand.'
+    ],
+
+    100,
+    '45 minutes',
+    'Upcoming'
+  ),
+
+  new Assessment(
+    3,
+    'Conditional Statements',
+    'Demonstrate your ability to control program flow using if, else if, else, and ternary operators.',
+    '05/06/2027',
+
+    [
+      'Create a program that uses an if statement.',
+      'Use else if to handle multiple conditions.',
+      'Use else to handle a default case.',
+      'Create at least one condition using logical operators.',
+      'Use a ternary operator for a simple condition.',
+      'Test your program with different values.'
+    ],
+
+    [
+      'Correctly uses if, else if, and else.',
+      'Creates logically correct conditions.',
+      'Handles different possible inputs.',
+      'Uses comparison and logical operators correctly.',
+      'Uses the ternary operator appropriately.',
+      'Code is readable and well structured.'
+    ],
+
+    100,
+    '50 minutes',
+    'Upcoming'
+  ),
+
+  new Assessment(
+    4,
+    'Functions',
+    'Assess your understanding of JavaScript functions, parameters, arguments, return values, and reusable logic.',
+    '12/06/2027',
+
+    [
+      'Create at least 3 JavaScript functions.',
+      'Use parameters in at least 2 functions.',
+      'Pass arguments when calling your functions.',
+      'Return values from your functions.',
+      'Create at least one arrow function.',
+      'Test each function with different inputs.'
+    ],
+
+    [
+      'Correctly declares and calls functions.',
+      'Uses parameters and arguments correctly.',
+      'Returns the expected values.',
+      'Creates reusable functions.',
+      'Uses arrow functions correctly.',
+      'Code is clean, readable, and logically structured.'
+    ],
+
+    100,
+    '60 minutes',
+    'Upcoming'
+  )
+];
+
+
+    class StudentDirectory {
+        constructor(image,name,email,rate,module,avgGrade,lastActive,assesmentScore,attendance) {
+            this.image=image;
+            this.name=name;
+            this.email=email;
+            this.rate=rate;
+            this.module=module;
+            this.avgGrade=avgGrade;
+            this.lastActive=lastActive;
+            this.assesmentScore=assesmentScore;
+            this.attendance=attendance;
+        }
+    }
+export const students=[
+    new StudentDirectory('test.jpg','alex wong','alex@gmail.com',56,3,92,'10:05 am',[
+       {
+         topic:'Dom',
+        score:77.
+       },
+       {
+         topic:'variable',
+        score:97.
+       },
+       {
+         topic:'String',
+        score:89.
+       }
+    ],8),
+    new StudentDirectory('test.jpg','John wong','john@gmail.com',46,2,55,'08:04 am',[
+      {
+         topic:'Dom',
+        score:44.
+       },
+       {
+         topic:'variable',
+        score:100.
+       },
+       {
+         topic:'String',
+        score:77.
+       }
+    ],7),
+    new StudentDirectory('test.jpg','alex Doe','doe@gmail.com',88,5,22,'11:05 am',[
+      {
+         topic:'Dom',
+        score:89.
+       },
+       {
+         topic:'variable',
+        score:12.
+       },
+       {
+         topic:'String',
+        score:99.
+       }
+    ],8),
+    new StudentDirectory('tutor.jpg','Mary Luka','mary@gmail.com',57,6,92,'15:05 pm',[
+      {
+         topic:'Dom',
+        score:85.
+       },
+       {
+         topic:'variable',
+        score:24.
+       },
+       {
+         topic:'String',
+        score:33.
+       }
+    ],4),
+    new StudentDirectory('test.jpg','David Mark','david@gmail.com',72,4,81,'09:15 am',[
+    { topic:'Dom', score:81 },
+    { topic:'variable', score:74 },
+    { topic:'String', score:88 }
+],7),
+
+new StudentDirectory('test.jpg','Sarah James','sarah@gmail.com',91,7,95,'07:42 am',[
+    { topic:'Dom', score:95 },
+    { topic:'variable', score:91 },
+    { topic:'String', score:94 }
+],8),
+
+new StudentDirectory('test.jpg','Michael Cole','michael@gmail.com',63,3,68,'12:20 pm',[
+    { topic:'Dom', score:65 },
+    { topic:'variable', score:72 },
+    { topic:'String', score:67 }
+],6),
+
+new StudentDirectory('test.jpg','Grace Peter','grace@gmail.com',84,5,87,'10:35 am',[
+    { topic:'Dom', score:86 },
+    { topic:'variable', score:83 },
+    { topic:'String', score:91 }
+],8),
+
+new StudentDirectory('test.jpg','Daniel Smith','daniel@gmail.com',48,2,59,'01:10 pm',[
+    { topic:'Dom', score:51 },
+    { topic:'variable', score:63 },
+    { topic:'String', score:54 }
+],5),
+
+new StudentDirectory('test.jpg','Emma Brown','emma@gmail.com',76,6,79,'08:50 am',[
+    { topic:'Dom', score:78 },
+    { topic:'variable', score:75 },
+    { topic:'String', score:84 }
+],7),
+
+new StudentDirectory('test.jpg','Chris Wilson','chris@gmail.com',39,1,45,'02:25 pm',[
+    { topic:'Dom', score:42 },
+    { topic:'variable', score:48 },
+    { topic:'String', score:44 }
+],4),
+
+new StudentDirectory('test.jpg','Linda James','linda@gmail.com',69,4,73,'11:45 am',[
+    { topic:'Dom', score:70 },
+    { topic:'variable', score:76 },
+    { topic:'String', score:69 }
+],6),
+
+new StudentDirectory('test.jpg','Brian Adams','brian@gmail.com',87,7,90,'09:05 am',[
+    { topic:'Dom', score:92 },
+    { topic:'variable', score:87 },
+    { topic:'String', score:91 }
+],8),
+
+new StudentDirectory('test.jpg','Rachel King','rachel@gmail.com',58,3,64,'03:15 pm',[
+    { topic:'Dom', score:61 },
+    { topic:'variable', score:66 },
+    { topic:'String', score:64 }
+],5),
+]
+
+ export const javascriptTopics = [
+  "Introduction to JavaScript",
+  "JavaScript Syntax",
+  "Variables and Constants",
+  "Data Types",
+  "Type Conversion and Coercion",
+  "Operators",
+  "Conditional Statements",
+  "Loops",
+  "Functions",
+  "Scope",
+  "Hoisting",
+  "Closures",
+  "Recursion",
+  "Arrays",
+  "Array Methods",
+  "Strings",
+  "String Methods",
+  "Objects",
+  "Object Methods",
+  "Destructuring",
+  "Spread and Rest Operators",
+  "Template Literals",
+  "Error Handling",
+  "Regular Expressions",
+  "Dates and Time",
+  "Math and Numbers",
+  "JSON",
+  "DOM Manipulation",
+  "DOM Traversal",
+  "DOM Events",
+  "Event Propagation",
+  "Event Delegation",
+  "Forms and Form Validation",
+  "Browser APIs",
+  "Local Storage and Session Storage",
+  "Asynchronous JavaScript",
+  "Callbacks",
+  "Promises",
+  "Async and Await",
+  "Fetch API",
+  "Working with REST APIs",
+  "Modules",
+  "Classes",
+  "Object-Oriented Programming",
+  "Prototypes and Prototype Chain",
+  "The this Keyword",
+  "Map and Set",
+  "Iterators and Generators",
+  "Symbols",
+  "WeakMap and WeakSet",
+  "Functional Programming",
+  "Higher-Order Functions",
+  "Execution Context",
+  "Call Stack",
+  "Event Loop",
+  "JavaScript Runtime",
+  "Memory Management",
+  "Garbage Collection",
+  "Shallow Copy and Deep Copy",
+  "Debouncing and Throttling",
+  "Currying",
+  "Function Composition",
+  "Memoization",
+  "JavaScript Design Patterns",
+  "JavaScript Modules and Architecture",
+  "npm and Package Management",
+  "Debugging",
+  "Testing",
+  "JavaScript Performance Optimization",
+  "Web Workers",
+  "Service Workers",
+  "WebSockets",
+  "JavaScript Security",
+  "Authentication and Authorization",
+  "Environment Variables",
+  "Build Tools",
+  "JavaScript Engines",
+  "JavaScript Internals",
+  "Advanced Asynchronous Programming",
+  "Advanced Object-Oriented Programming",
+  "Advanced Functional Programming",
+  "Advanced Error Handling",
+  "Advanced Performance Optimization"
+];
+//CODECLASS MOCKUP DATA END
+
+//founder
+const CodeClassFounderData={
+  name:'Okoye Otitochukwu Nicodemus',
+  alias:'Otikas',
+  title:'Founder & CEO',
+  image:'test.jpg',
+  description:'Otikas is a software engineer and entrepreneur with a passion for teaching programming. He has good experience in the tech industry and has founded multiple successful startups. His mission is to make programming education accessible to everyone.'
+}
+//instructors
+class CodeClassInstructor {
+  constructor(name, id,age,uid,alias,course, title, image, description) {
+    this.name = name;
+    this.id = id;
+    this.age = age;
+    this.uid = uid;
+    this.alias = alias;
+    this.course = course; 
+    this.title = title;
+    this.image = image;
+    this.description = description;
+  } }
+
+  const CodeClassInstructors = [
+  new CodeClassInstructor(
+    'Otitochukwu Okoye',
+    1,
+    22, 
+    'OTK-001',
+    'Otikas',
+    'JavaScript Fundamentals',
+    'Instructor',
+    'john-doe.jpg',
+    'John is a experienced JavaScript developer with a passion for teaching.'
+  ),
+  new CodeClassInstructor(
+    'Jane Smith',
+    2,
+    28,
+    'JS-002',
+    'JS',
+    'Advanced JavaScript',
+    'Instructor',
+    'jane-smith.jpg',
+    'Jane is a senior JavaScript engineer with expertise in modern web development.'
+  )
+];
+
+//Courses
 class Course {
   constructor(
     courseId,
@@ -43,9 +517,8 @@ export  const allCourses = [
     'JavaScript Fundamentals to Advanced',
     '12 Weeks',
     'tutor.png.jpeg',
-    'Otito Okoye',
+    'Otitochukwu Okoye',
     'Senior JavaScript Instructor',
-
     'Otito is a passionate software developer focused on building modern web applications. He specializes in creating performant, scalable applications and is also a dedicated tutor who enjoys helping students understand coding concepts and develop practical skills.',
 
     "This cohort course takes you deep into the heart of vanilla JavaScript. Rather than just learning syntax and APIs, you'll dissect closures, execution scopes, event loops, and asynchronous runtime rules. To prove mastery, you'll complete assessments directly compiled on CodePen workspaces and reviewed under strict FAANG quality-standards.",
@@ -652,428 +1125,4 @@ export  const allCourses = [
     'Basic programming knowledge is recommended. Students should be comfortable using a terminal.'
   )
 
-];
-
-
-
-//student course board information
-class Courseboard {
-    constructor(topic,subtopic,inProgress,isLocked) {
-        this.topic =topic,
-        this.subtopic=subtopic,
-         this.inProgress=inProgress,
-          this.isLocked=isLocked
-    }
-}
-export const userboard =[
-new Courseboard('Module 1: JavaScript Engine Basics','Scopes, hoisting, Closures, & memory management.',false,false),
-new Courseboard('Module 2: Asynchronous Operations','Promises, async/await, and event-loop microtasks.',false,false),
-new Courseboard('Module 3: Advanced DOM Manipulation','Virtual Dom fundamentals, event delegation and optimization.',true,false),
-new Courseboard('Module 4: Build System Engineering','Webpack, Vite config, and CodePen pipeline integration.',false,true),
-]
-
-
-//student lesson board information
-
-class LessonBoard {
-  constructor(id,topic, explanation, example) {
-    this.id=id;
-    this.topic = topic;
-    this.explanation = explanation;
-    this.example = example;
-  }
-}
-
-
-export const userlessonBoard = [
-  new LessonBoard(
-    1,
-    'Variables & Types',
-    'A variable is a named container used to store a value in a program.',
-    `const name = "John";
-const age = 22;
-const isDeveloper = true;`
-  ),
-
-  new LessonBoard(
-    2,
-    'Functions & Scopes',
-    'A function is a reusable block of code that performs a specific task. Scope determines where a variable can be accessed.',
-    `function greet(name) {
-  return "Hello " + name;
-}
-
-const message = greet("Otikas");
-console.log(message);`
-  ),
-
-  new LessonBoard(
-    3,
-    'DOM Manipulation',
-    'DOM manipulation means using JavaScript to access and change elements on a web page.',
-    `const heading = document.querySelector("h1");
-
-heading.textContent = "Hello, Otikas!";`
-  ),
-];
-
-//assessments dashboard
-class Assessment {
-  constructor(
-    id,
-    topic,
-    description,
-    submissionDeadline,
-    requirements,
-    gradingRubrics,
-    totalMarks,
-    duration,
-    status
-  ) {
-    this.id = id;
-    this.topic = topic;
-    this.description = description;
-    this.submissionDeadline = submissionDeadline;
-    this.requirements = requirements;
-    this.gradingRubrics = gradingRubrics;
-    this.totalMarks = totalMarks;
-    this.duration = duration;
-    this.status = status;
-  }
-}
-
-export const studentAssessment = [
-  new Assessment(
-    1,
-    'Variables & Types',
-    'Test your understanding of JavaScript variables, data types, and how values are stored and used in programs.',
-    '22/05/2027',
-
-    [
-      'Use let and const to declare variables.',
-      'Create variables for at least 5 different values.',
-      'Identify the data type of each value.',
-      'Use typeof to check variable types.',
-      'Use meaningful and descriptive variable names.',
-      'Submit your solution as a JavaScript file.'
-    ],
-
-    [
-      'Correctly declares variables using let and const.',
-      'Correctly identifies JavaScript data types.',
-      'Uses appropriate variable names.',
-      'Demonstrates correct use of typeof.',
-      'Uses the correct data type for each value.',
-      'Code is clean, readable, and properly formatted.'
-    ],
-
-    100,
-    '45 minutes',
-    'Upcoming'
-  ),
-
-  new Assessment(
-    2,
-    'Operators & Expressions',
-    'Evaluate your ability to use JavaScript operators and expressions to solve programming problems.',
-    '29/05/2027',
-
-    [
-      'Use arithmetic operators to perform calculations.',
-      'Use comparison operators to compare values.',
-      'Use logical operators to combine conditions.',
-      'Demonstrate the difference between == and ===.',
-      'Create expressions that produce the expected results.',
-      'Submit your solution as a JavaScript file.'
-    ],
-
-    [
-      'Correctly uses arithmetic operators.',
-      'Correctly applies comparison operators.',
-      'Correctly uses logical operators.',
-      'Demonstrates a clear understanding of == and ===.',
-      'Expressions produce the expected results.',
-      'Code is clean and easy to understand.'
-    ],
-
-    100,
-    '45 minutes',
-    'Upcoming'
-  ),
-
-  new Assessment(
-    3,
-    'Conditional Statements',
-    'Demonstrate your ability to control program flow using if, else if, else, and ternary operators.',
-    '05/06/2027',
-
-    [
-      'Create a program that uses an if statement.',
-      'Use else if to handle multiple conditions.',
-      'Use else to handle a default case.',
-      'Create at least one condition using logical operators.',
-      'Use a ternary operator for a simple condition.',
-      'Test your program with different values.'
-    ],
-
-    [
-      'Correctly uses if, else if, and else.',
-      'Creates logically correct conditions.',
-      'Handles different possible inputs.',
-      'Uses comparison and logical operators correctly.',
-      'Uses the ternary operator appropriately.',
-      'Code is readable and well structured.'
-    ],
-
-    100,
-    '50 minutes',
-    'Upcoming'
-  ),
-
-  new Assessment(
-    4,
-    'Functions',
-    'Assess your understanding of JavaScript functions, parameters, arguments, return values, and reusable logic.',
-    '12/06/2027',
-
-    [
-      'Create at least 3 JavaScript functions.',
-      'Use parameters in at least 2 functions.',
-      'Pass arguments when calling your functions.',
-      'Return values from your functions.',
-      'Create at least one arrow function.',
-      'Test each function with different inputs.'
-    ],
-
-    [
-      'Correctly declares and calls functions.',
-      'Uses parameters and arguments correctly.',
-      'Returns the expected values.',
-      'Creates reusable functions.',
-      'Uses arrow functions correctly.',
-      'Code is clean, readable, and logically structured.'
-    ],
-
-    100,
-    '60 minutes',
-    'Upcoming'
-  )
-];
-
-
-    class StudentDirectory {
-        constructor(image,name,email,rate,module,avgGrade,lastActive,assesmentScore,attendance) {
-            this.image=image;
-            this.name=name;
-            this.email=email;
-            this.rate=rate;
-            this.module=module;
-            this.avgGrade=avgGrade;
-            this.lastActive=lastActive;
-            this.assesmentScore=assesmentScore;
-            this.attendance=attendance;
-        }
-    }
-export const students=[
-    new StudentDirectory('test.jpg','alex wong','alex@gmail.com',56,3,92,'10:05 am',[
-       {
-         topic:'Dom',
-        score:77.
-       },
-       {
-         topic:'variable',
-        score:97.
-       },
-       {
-         topic:'String',
-        score:89.
-       }
-    ],8),
-    new StudentDirectory('test.jpg','John wong','john@gmail.com',46,2,55,'08:04 am',[
-      {
-         topic:'Dom',
-        score:44.
-       },
-       {
-         topic:'variable',
-        score:100.
-       },
-       {
-         topic:'String',
-        score:77.
-       }
-    ],7),
-    new StudentDirectory('test.jpg','alex Doe','doe@gmail.com',88,5,22,'11:05 am',[
-      {
-         topic:'Dom',
-        score:89.
-       },
-       {
-         topic:'variable',
-        score:12.
-       },
-       {
-         topic:'String',
-        score:99.
-       }
-    ],8),
-    new StudentDirectory('tutor.jpg','Mary Luka','mary@gmail.com',57,6,92,'15:05 pm',[
-      {
-         topic:'Dom',
-        score:85.
-       },
-       {
-         topic:'variable',
-        score:24.
-       },
-       {
-         topic:'String',
-        score:33.
-       }
-    ],4),
-    new StudentDirectory('test.jpg','David Mark','david@gmail.com',72,4,81,'09:15 am',[
-    { topic:'Dom', score:81 },
-    { topic:'variable', score:74 },
-    { topic:'String', score:88 }
-],7),
-
-new StudentDirectory('test.jpg','Sarah James','sarah@gmail.com',91,7,95,'07:42 am',[
-    { topic:'Dom', score:95 },
-    { topic:'variable', score:91 },
-    { topic:'String', score:94 }
-],8),
-
-new StudentDirectory('test.jpg','Michael Cole','michael@gmail.com',63,3,68,'12:20 pm',[
-    { topic:'Dom', score:65 },
-    { topic:'variable', score:72 },
-    { topic:'String', score:67 }
-],6),
-
-new StudentDirectory('test.jpg','Grace Peter','grace@gmail.com',84,5,87,'10:35 am',[
-    { topic:'Dom', score:86 },
-    { topic:'variable', score:83 },
-    { topic:'String', score:91 }
-],8),
-
-new StudentDirectory('test.jpg','Daniel Smith','daniel@gmail.com',48,2,59,'01:10 pm',[
-    { topic:'Dom', score:51 },
-    { topic:'variable', score:63 },
-    { topic:'String', score:54 }
-],5),
-
-new StudentDirectory('test.jpg','Emma Brown','emma@gmail.com',76,6,79,'08:50 am',[
-    { topic:'Dom', score:78 },
-    { topic:'variable', score:75 },
-    { topic:'String', score:84 }
-],7),
-
-new StudentDirectory('test.jpg','Chris Wilson','chris@gmail.com',39,1,45,'02:25 pm',[
-    { topic:'Dom', score:42 },
-    { topic:'variable', score:48 },
-    { topic:'String', score:44 }
-],4),
-
-new StudentDirectory('test.jpg','Linda James','linda@gmail.com',69,4,73,'11:45 am',[
-    { topic:'Dom', score:70 },
-    { topic:'variable', score:76 },
-    { topic:'String', score:69 }
-],6),
-
-new StudentDirectory('test.jpg','Brian Adams','brian@gmail.com',87,7,90,'09:05 am',[
-    { topic:'Dom', score:92 },
-    { topic:'variable', score:87 },
-    { topic:'String', score:91 }
-],8),
-
-new StudentDirectory('test.jpg','Rachel King','rachel@gmail.com',58,3,64,'03:15 pm',[
-    { topic:'Dom', score:61 },
-    { topic:'variable', score:66 },
-    { topic:'String', score:64 }
-],5),
-]
-
- export const javascriptTopics = [
-  "Introduction to JavaScript",
-  "JavaScript Syntax",
-  "Variables and Constants",
-  "Data Types",
-  "Type Conversion and Coercion",
-  "Operators",
-  "Conditional Statements",
-  "Loops",
-  "Functions",
-  "Scope",
-  "Hoisting",
-  "Closures",
-  "Recursion",
-  "Arrays",
-  "Array Methods",
-  "Strings",
-  "String Methods",
-  "Objects",
-  "Object Methods",
-  "Destructuring",
-  "Spread and Rest Operators",
-  "Template Literals",
-  "Error Handling",
-  "Regular Expressions",
-  "Dates and Time",
-  "Math and Numbers",
-  "JSON",
-  "DOM Manipulation",
-  "DOM Traversal",
-  "DOM Events",
-  "Event Propagation",
-  "Event Delegation",
-  "Forms and Form Validation",
-  "Browser APIs",
-  "Local Storage and Session Storage",
-  "Asynchronous JavaScript",
-  "Callbacks",
-  "Promises",
-  "Async and Await",
-  "Fetch API",
-  "Working with REST APIs",
-  "Modules",
-  "Classes",
-  "Object-Oriented Programming",
-  "Prototypes and Prototype Chain",
-  "The this Keyword",
-  "Map and Set",
-  "Iterators and Generators",
-  "Symbols",
-  "WeakMap and WeakSet",
-  "Functional Programming",
-  "Higher-Order Functions",
-  "Execution Context",
-  "Call Stack",
-  "Event Loop",
-  "JavaScript Runtime",
-  "Memory Management",
-  "Garbage Collection",
-  "Shallow Copy and Deep Copy",
-  "Debouncing and Throttling",
-  "Currying",
-  "Function Composition",
-  "Memoization",
-  "JavaScript Design Patterns",
-  "JavaScript Modules and Architecture",
-  "npm and Package Management",
-  "Debugging",
-  "Testing",
-  "JavaScript Performance Optimization",
-  "Web Workers",
-  "Service Workers",
-  "WebSockets",
-  "JavaScript Security",
-  "Authentication and Authorization",
-  "Environment Variables",
-  "Build Tools",
-  "JavaScript Engines",
-  "JavaScript Internals",
-  "Advanced Asynchronous Programming",
-  "Advanced Object-Oriented Programming",
-  "Advanced Functional Programming",
-  "Advanced Error Handling",
-  "Advanced Performance Optimization"
 ];

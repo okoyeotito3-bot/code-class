@@ -1,10 +1,10 @@
-import BoardHeader from "./studentDashBoardHeader";
+import BoardHeader from "./Header";
 import { useEffect, useState } from "react";
 import { supabase } from "../../supabase";
 import Button from "../../Utilities/Button";
 import {Check, MessageSquare} from "lucide-react";
 
-export default function StudentBord({ className }) {
+export default function OverView({ className }) {
   const [userName, setUserName] = useState("");
   const date = new Date();
   const todayDate = date.toLocaleString();
@@ -31,7 +31,7 @@ export default function StudentBord({ className }) {
   }, []);
 
   return (
-    <section className='flex flex-col flex-1 min-w-0 h-full overflow-y-auto gap-8 p-2 pb-24 md:pb-2'>
+    <section className='flex flex-col flex-1 min-w-0 h-full overflow-y-auto gap-8 p-2 pb-24 md:pb-2 scrollbar-thin scrollbar-thumb-[#1F2638] scrollbar-track-[#0B0F19] scrollbar-thumb-rounded-md scrollbar-track-rounded-md'>
        <BoardHeader
            text= {`Welcome back,${ userName || 'user'} `}
            subtext={todayDate}

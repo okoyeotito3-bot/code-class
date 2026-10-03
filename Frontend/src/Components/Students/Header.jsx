@@ -1,5 +1,5 @@
 import {Bell,UserRound} from 'lucide-react'
-export default function BoardHeader({text,subtext}) {
+export default function Header({text,subtext}) {
        let UserImage = "";
   return (
     <header className="w-full pb-8 flex flex-col gap-4 justify-between md:flex-row lg:flex-row">
