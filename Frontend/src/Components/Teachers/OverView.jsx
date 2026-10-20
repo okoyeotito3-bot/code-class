@@ -1,6 +1,6 @@
 import { CheckCircle, File, Menu, Video } from "lucide-react";
 import Header from "./Header"
-export default function Dashboard(){
+export default function Overview(){
 
         const instructorData={
         instructorName:'Otito Okoye',

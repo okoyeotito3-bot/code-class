@@ -1,6 +1,6 @@
 import { Check, CircleCheck } from "lucide-react"
 import Header from "./Header"
-export default function TeacherSubmissionPannel(){
+export default function SubmissionPanel(){
     return(
         <section className="flex flex-col gap-8 p-10 w-full">
           <Header text='Assessment Grading Center' subText='Directly grade and write feedback for student submissions'/>

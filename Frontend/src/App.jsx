@@ -15,11 +15,11 @@ import Assesment from "./Pages/Students/Student-Assesment";
 import Grades from "./Pages/Students/Student-Grades";
 import Profile from "./Pages/Students/Student-Profile";
 import Classes from "./Pages/Students/Student-Class";
-import TeacherDashBoard from "./Pages/TeacherDashboard/Teacher-DashBoard";
-import TeacherStudent from "./Pages/TeacherDashboard/Teacher-students";
-import TeacherClasses from "./Pages/TeacherDashboard/Teacher-Classes";
-import TeacherAssesmentBoard from "./Pages/TeacherDashboard/TeacherAssesmentBoard";
-import TeacherSubmissionBoard from "./Pages/TeacherDashboard/TeacherSubmissionBoard";
+import TeacherDashBoard from "./Pages/Teachers/Teacher-DashBoard";
+import TeacherStudent from "./Pages/Teachers/Teacher-students";
+import TeacherClasses from "./Pages/Teachers/Teacher-Classes";
+import TeacherAssesmentBoard from "./Pages/Teachers/TeacherAssesmentBoard";
+import TeacherSubmissionBoard from "./Pages/Teachers/TeacherSubmissionBoard";
 export default function App() {
   return (
     <>

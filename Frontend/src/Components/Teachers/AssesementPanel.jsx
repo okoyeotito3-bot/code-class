@@ -1,7 +1,7 @@
 import { Book } from "lucide-react"
 import Header from "./Header"
 import { useState } from "react"
-export default function TeacherAssesmentPannel(){
+export default function AssesementPanel(){
 const [assements,setAssesments]=useState(null)
     function handleAssesment(FormData){
         setAssesments({

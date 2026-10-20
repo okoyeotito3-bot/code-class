@@ -4,7 +4,7 @@ import { useState } from "react";
 import {students} from '../../mockup'
 
 
-export default function TeacherStudentBoard(){
+export default function StudentsDirectory(){
    const [activeStudent, setActiveStudent] = useState(null)
    const [studentDirectory,setStudentDirectory]=useState(students)
    const [warnMessage,setWarnMessage]=useState(false)

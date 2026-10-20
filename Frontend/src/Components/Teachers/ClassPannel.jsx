@@ -2,7 +2,7 @@ import Header from "./Header";
 import { javascriptTopics } from "../../mockup";
 import { CalendarX2 } from "lucide-react";
 import { useState} from "react";
-export default function TeacherClassBoard() {
+export default function ClassPannel() {
   const [nextClass, setNextClass] = useState(null);
   const [editDescription, setEditDescription] = useState(false);
 
