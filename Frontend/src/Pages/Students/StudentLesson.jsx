@@ -9,8 +9,8 @@ export default function LessonBoard() {
       <SideBar   navItems={studentNavItems}/>
       <LessonPannel />
        <ButtomNavigation 
-            buttomNavMenu={studentNavItems.filter(item => item.id <= 4)}
-            moreMenu={studentNavItems.filter(item => item.id > 4)}
+            navMenu={studentNavItems.filter(item => item.id <= 4)}
+            moreNavMenu={studentNavItems.filter(item => item.id > 4)}
             />
     </section>
   );

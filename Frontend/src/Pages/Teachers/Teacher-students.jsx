@@ -1,6 +1,6 @@
 import SideBar from "../../Components/Shared/SideBar";
 import StudentsDirectory from "../../Components/Teachers/StudentsDirectory"
-import Footer from '../../Components/Teachers/Footer'
+import BottomNavigation from "../../Components/Shared/ButtomNavigation";
 import { teacherNavItems } from "../../Components/Teachers/TeacherNavItems";
 export default function TeacherStudent(){
 
@@ -8,7 +8,10 @@ export default function TeacherStudent(){
          <section className="bg-[#0B0F19] flex w-screen h-dvh overflow-hidden">
            <SideBar navItems={teacherNavItems} />
            <StudentsDirectory/>
-           <Footer/>
+           <BottomNavigation
+             navMenu={teacherNavItems.filter((item) => item.id <= 4)}
+             moreNavMenu={teacherNavItems.filter((item) => item.id > 4)}
+           />
         </section>
     )
 }

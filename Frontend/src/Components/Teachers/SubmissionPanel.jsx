@@ -3,7 +3,7 @@ import Header from "./Header"
 export default function SubmissionPanel(){
     return(
         <section className="flex flex-col gap-8 p-10 w-full flex-1 min-w-0 h-full overflow-y-auto scrollbar-thin scrollbar-thumb-[#1F2638]
-         scrollbar-track-[#0B0F19] scrollbar-thumb-rounded-md scrollbar-track-rounded-md md:pb-2">
+         scrollbar-track-[#0B0F19] scrollbar-thumb-rounded-md scrollbar-track-rounded-md pb-20 md:pb-2">
           <Header text='Assessment Grading Center' subText='Directly grade and write feedback for student submissions'/>
           <section className="flex gap-6 flex-col md:flex-row">
             <div className="flex flex-col bg-[#161B26] gap-4 p-6 rounded-md">

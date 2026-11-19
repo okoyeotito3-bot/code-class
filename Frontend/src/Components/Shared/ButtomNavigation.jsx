@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { LogOut,Menu,X } from "lucide-react";
 
-export default function BottomNavigation({buttomNavMenu,moreMenu}) {
+export default function BottomNavigation({navMenu,moreNavMenu}) {
 
   const [open, setOpen] = useState(false);
 
@@ -16,7 +16,7 @@ export default function BottomNavigation({buttomNavMenu,moreMenu}) {
         origin-bottom transition-all duration-300 ease-in-out
         ${open ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0 pointer-events-none"}`}
       >
-        {buttomNavMenu.map((item, index) => (
+        {moreNavMenu.map((item, index) => (
           <Link
             to={item.path}
             key={index}
@@ -36,7 +36,7 @@ export default function BottomNavigation({buttomNavMenu,moreMenu}) {
       </nav>
         
       <nav className="flex justify-between py-3 px-2.5 bg-[#161B26]">
-        {moreMenu.map((item, index) => (
+        {navMenu.map((item, index) => (
           <Link
             to={item.path}
             key={index}

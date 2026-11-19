@@ -20,7 +20,8 @@ const [assements,setAssesments]=useState(null)
     const totalStudents =28
     return(
    
-        <section className="flex flex-col gap-8 p-10 w-full flex-1 min-w-0 overflow-y-auto md:pb-2">
+        <section className="flex flex-col gap-8 p-10 w-full flex-1 min-w-0 overflow-y-auto pb-20 md:pb-2 scrollbar-thin scrollbar-thumb-[#1F2638]
+         scrollbar-track-[#0B0F19] scrollbar-thumb-rounded-md scrollbar-track-rounded-md">
            <Header text='Assessment Design & grading pipeline' subText='Author assignments, set validation rules, and establish rubrics'/>
            <section className="flex gap-6 flex-col md:flex-row">
             <form action={handleAssesment} className="flex flex-col bg-[#161B26] rounded-md p-6 gap-5 flex-2">
