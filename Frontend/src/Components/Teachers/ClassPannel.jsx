@@ -44,7 +44,8 @@ export default function ClassPannel() {
 
  
   return (
-    <section className="flex flex-col gap-8 p-10 w-full">
+    <section className="flex flex-col gap-8 p-10 w-full flex-1 min-w-0 h-full overflow-y-auto scrollbar-thin scrollbar-thumb-[#1F2638]
+         scrollbar-track-[#0B0F19] scrollbar-thumb-rounded-md scrollbar-track-rounded-md md:pb-2">
       <Header
         text="Class Scheduling & Meet Hub"
         subText="Live video integrations and asynchronous classroom records"

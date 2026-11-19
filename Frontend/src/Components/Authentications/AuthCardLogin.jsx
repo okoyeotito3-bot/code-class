@@ -26,7 +26,7 @@ export default function AuthLoginCard() {
       return;
     } else {
       setPasswordIsWrong(false);
-      navigate("/student-dashboard");
+      navigate("/dashboard");
     }
   }
 

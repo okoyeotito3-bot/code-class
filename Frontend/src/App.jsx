@@ -33,18 +33,18 @@ export default function App() {
         <Route path="/payment-checkout" element={<PaymentCheckout />} />
         <Route path="/payment-succesfull" element={<PaystackSuccesful />} />
         <Route path="/payment-failed" element={<PaymentFailUi />} />
-        <Route path="/dashboard" element={<StudentDashboard />} />
+        <Route path="/student-dashboard" element={<StudentDashboard />} />
         <Route path="/my-course" element={<StudentCourse />} />
         <Route path="/lessons" element={<LessonBoard />} />
         <Route path="/assessments" element={<Assesment />} />
         <Route path="/grades" element={<Grades />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/classes" element={<Classes />} />
+        <Route path="/classes" element={<Classes />} /> 
         <Route path="/teacher-dashboard" element={<TeacherDashBoard />} />
         <Route path="/teacher-student" element={<TeacherStudent />} />
         <Route path="/teacher-classes" element={<TeacherClasses />} />
-        <Route path="/teacher-assesment" element={<TeacherAssesmentBoard />} />
-        <Route path="/teacher-submisson" element={<TeacherSubmissionBoard />} />
+        <Route path="/teacher-assessments" element={<TeacherAssesmentBoard />} />
+        <Route path="/teacher-submission" element={<TeacherSubmissionBoard />} />
       </Routes>
     </>
   );

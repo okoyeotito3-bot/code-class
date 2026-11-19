@@ -1,13 +1,16 @@
-import SideBar from "../../Components/Students/SideBar";
+import SideBar from "../../Components/Shared/SideBar";
 import ProfilePannel from "../../Components/Students/ProfilePannel";
-import BottomNavigation from "../../Components/Students/ButtomNavigation";
-
+import ButtomNavigation from "../../Components/Shared/ButtomNavigation";
+import { studentNavItems } from "../../Components/Students/StudentNavItems";
 export default function Profile() {
   return (
     <section className="bg-[#0B0F19] flex w-screen h-dvh overflow-hidden">
-      <SideBar />
+      <SideBar navItems={studentNavItems} />
       <ProfilePannel />
-      <BottomNavigation />
+      <ButtomNavigation
+        buttomNavMenu={studentNavItems.filter((item) => item.id <= 4)}
+        moreMenu={studentNavItems.filter((item) => item.id > 4)}
+      />
     </section>
   );
 }

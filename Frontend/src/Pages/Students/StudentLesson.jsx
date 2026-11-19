@@ -1,13 +1,17 @@
-import SideBar from "../../Components/Students/SideBar";
+import SideBar from "../../Components/Shared/SideBar";
 import LessonPannel from "../../Components/Students/LessonPannel";
-import ButtomNavigation from "../../Components/Students/ButtomNavigation";
+import ButtomNavigation from "../../Components/Shared/ButtomNavigation";
+import { studentNavItems } from "../../Components/Students/StudentNavItems";  
 
 export default function LessonBoard() {
   return (
     <section className="bg-[#0B0F19] flex w-screen h-dvh overflow-hidden">
-      <SideBar />
+      <SideBar   navItems={studentNavItems}/>
       <LessonPannel />
-      <ButtomNavigation />
+       <ButtomNavigation 
+            buttomNavMenu={studentNavItems.filter(item => item.id <= 4)}
+            moreMenu={studentNavItems.filter(item => item.id > 4)}
+            />
     </section>
   );
 }

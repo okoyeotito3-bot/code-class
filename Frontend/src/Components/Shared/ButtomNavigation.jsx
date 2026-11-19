@@ -1,8 +1,10 @@
-import { Award, Book, File, Grid, Menu, Terminal, Video, User, X ,LogOut} from "lucide-react";
+
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { LogOut,Menu,X } from "lucide-react";
 
-export default function BottomNavigation() {
+export default function BottomNavigation({buttomNavMenu,moreMenu}) {
+
   const [open, setOpen] = useState(false);
 
   return (
@@ -14,20 +16,16 @@ export default function BottomNavigation() {
         origin-bottom transition-all duration-300 ease-in-out
         ${open ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0 pointer-events-none"}`}
       >
-        {[
-          { icon: Terminal, content: "Assessments" },
-          { icon: Award, content: "Grades" },
-          { icon: User, content: "Profile" },
-        ].map((item, index) => (
+        {buttomNavMenu.map((item, index) => (
           <Link
-            to={`/${item.content.toLowerCase().replace(" ", "-")}`}
+            to={item.path}
             key={index}
             onClick={() => setOpen(false)} 
             className="flex flex-col gap-1 items-center cursor-pointer"
           >
             <item.icon className="text-[#2979FF]" size={20} />
             <span className="text-[#2979FF] font-['geist'] text-sm font-bold">
-              {item.content}
+              {item.label}
             </span>
           </Link>
         ))}
@@ -38,19 +36,14 @@ export default function BottomNavigation() {
       </nav>
         
       <nav className="flex justify-between py-3 px-2.5 bg-[#161B26]">
-        {[
-          { icon: Grid, content: "DashBoard" },
-          { icon: Book, content: "My Course" },
-          { icon: File, content: "Lessons" },
-          { icon: Video, content: "Classes" },
-        ].map((item, index) => (
+        {moreMenu.map((item, index) => (
           <Link
-            to={`/${item.content.toLowerCase().replace(" ", "-")}`}
+            to={item.path}
             key={index}
             className="flex flex-col gap-1 items-center cursor-pointer"
           >
             <item.icon className="text-[#2979FF]" size={20} />
-            <span className="text-[#2979FF] font-['geist'] text-sm font-bold">{item.content}</span>
+            <span className="text-[#2979FF] font-['geist'] text-sm font-bold">{item.label}</span>
           </Link>
         ))}
         

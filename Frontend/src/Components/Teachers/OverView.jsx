@@ -13,8 +13,10 @@ export default function Overview(){
     }
  const date = new Date;
  const todayDate= date.toDateString()
-    return(
-        <section className="w-full flex flex-col gap-8 p-10">
+    return( 
+
+        <section className="w-full flex flex-col gap-8 p-10 flex-1 min-w-0 h-full overflow-y-auto scrollbar-thin scrollbar-thumb-[#1F2638]
+         scrollbar-track-[#0B0F19] scrollbar-thumb-rounded-md scrollbar-track-rounded-md md:pb-2">
             <Header text={`Welcome back, ${instructorData.instructorName}!`} subText={todayDate}/>
 
 
